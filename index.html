@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <title>Koldesell - Korstnapühkimine ja Küttekehade Remont</title>
+    <style>
+        /* Sinu olemasolevad stiilid ja mobiili-optimeerimised */
+        body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.5; margin: 0; padding: 0; color: #333; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        header { background: #1a1a1a; color: #fff; padding: 15px 0; }
+        .logo-nav { display: flex; align-items: center; gap: 10px; }
+        .logo-nav img { width: 42px; height: 42px; border-radius: 50%; }
+        .hero { text-align: center; padding: 40px 20px; background: #f4f4f4; }
+        .hero img { width: 80px; height: 80px; border-radius: 50%; }
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 40px 0; }
+        .card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; background: #fff; }
+        .cert-box { border: 2px solid #e05a47; border-radius: 8px; padding: 20px; margin: 20px 0; background: #fff5f3; }
+        @media (max-width: 768px) {
+            .services { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container logo-nav">
+            <img src="logo.png" alt="Koldesell Logo">
+            <strong>Koldesell.ee</strong>
+        </div>
+    </header>
+
+    <section class="hero">
+        <img src="logo.png" alt="Koldesell Logo">
+        <h1>Ametlik Korstnapühkimine & Pisiremont</h1>
+        <p>Professionaalne korstnapühkimisteenus ja küttekehade hooldus ning väikeremont.</p>
+    </section>
+
+    <main class="container">
+        <h2>Teenused</h2>
+        <div class="services">
+            <div class="card">
+                <h3>🧹 Korstnapühkimine</h3>
+                <p>Küttesüsteemide (ahjud, pliidid, kaminad, korstnad) puhastamine ja kontroll vastavalt tuleohutusnõuetele. Väljastame ametliku akti Päästeametile.</p>
+            </div>
+            <div class="card">
+                <h3>🛠️ Küttekehade pisiremont</h3>
+                <p>Uste, siibrite ja rosettide vahetus ning paigaldus. Sorteeritud pragude tihendamine, segu- ja parandustööd.</p>
+            </div>
+        </div>
+
+        <div class="cert-box">
+            <h3>📜 Kutsetunnistus</h3>
+            <p><strong>Teenuse osutajal on kehtiv korstnapühkija kutsetunnistus.</strong></p>
+            <p>Kõik teostatud tööd registreeritakse ametlikus küttesüsteemide portaalis (Ametlik akt).</p>
+        </div>
+    </main>
+
+</body>
+</html>
