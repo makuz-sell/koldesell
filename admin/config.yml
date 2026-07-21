@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: makuz-sell/koldesell
+  branch: main
+
+media_folder: "pildid"
+public_folder: "/pildid"
+
+collections:
+  - name: "galerii"
+    label: "Tehtud tööd"
+    folder: "content/galerii"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Pealkiri", name: "title", widget: "string"}
+      - {label: "Kuupäev", name: "date", widget: "datetime"}
+      - {label: "Pilt", name: "image", widget: "image"}
+      - {label: "Kirjeldus", name: "description", widget: "text", required: false}
