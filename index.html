@@ -6,7 +6,6 @@
     <meta http-equiv="X-Frame-Options" content="DENY">
     <title>Koldesell - Korstnapühkimine ja Küttekehade Remont</title>
     <style>
-        /* Sinu olemasolevad stiilid ja mobiili-optimeerimised */
         body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.5; margin: 0; padding: 0; color: #333; }
         .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
         header { background: #1a1a1a; color: #fff; padding: 15px 0; }
@@ -17,6 +16,15 @@
         .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 40px 0; }
         .card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; background: #fff; }
         .cert-box { border: 2px solid #e05a47; border-radius: 8px; padding: 20px; margin: 20px 0; background: #fff5f3; }
+        
+        /* Galerii stiilid */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
+        .gallery-card { border: 1px solid #eee; border-radius: 8px; overflow: hidden; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .gallery-card img { width: 100%; height: 200px; object-fit: cover; display: block; }
+        .gallery-card-body { padding: 15px; }
+        .gallery-card-body h4 { margin: 0 0 8px 0; font-size: 1.1rem; }
+        .gallery-card-body p { margin: 0; font-size: 0.9rem; color: #666; }
+
         @media (max-width: 768px) {
             .services { grid-template-columns: 1fr; }
         }
@@ -55,7 +63,76 @@
             <p><strong>Teenuse osutajal on kehtiv korstnapühkija kutsetunnistus.</strong></p>
             <p>Kõik teostatud tööd registreeritakse ametlikus küttesüsteemide portaalis (Ametlik akt).</p>
         </div>
+
+        <!-- TEHTUD TÖÖDE GALERII SEKTSIOON -->
+        <section style="margin: 40px 0;">
+            <h2>Tehtud tööd</h2>
+            <div id="gallery" class="gallery-grid">
+                <p>Laen tehtud töid...</p>
+            </div>
+        </section>
     </main>
 
+    <!-- DÜNAAMILINE DOKUMENTIDE LAADIMISE SKRIPT -->
+    <script>
+        async function loadGallery() {
+            const galleryContainer = document.getElementById('gallery');
+            const repoOwner = 'makuz-sell';
+            const repoName = 'koldesell';
+
+            try {
+                // Küsime GitHub API käest kausta sisu
+                const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/content/galerii`);
+                
+                if (!response.ok) {
+                    galleryContainer.innerHTML = '<p>Hetkel tehtud töid veel pole või kausta ei leitud.</p>';
+                    return;
+                }
+
+                const files = await response.json();
+                galleryContainer.innerHTML = ''; // Tühjendame "Laen..." teksti
+
+                for (const file of files) {
+                    if (file.name.endsWith('.md')) {
+                        // Laeme iga markdown faili sisu
+                        const fileRes = await fetch(file.download_url);
+                        const content = await fileRes.text();
+
+                        // Lihtne parsija Frontmatter teabe jaoks (title, image, description)
+                        const titleMatch = content.match(/title:\s*"?([^"\r\n]+)"?/);
+                        const imageMatch = content.match(/image:\s*"?([^"\r\n]+)"?/);
+                        const descMatch = content.match(/description:\s*"?([^"\r\n]+)"?/);
+
+                        const title = titleMatch ? titleMatch[1] : 'Tehtud töö';
+                        let image = imageMatch ? imageMatch[1] : '';
+                        const description = descMatch ? descMatch[1] : '';
+
+                        // Kui pildi tee algab kaldkriipsuga, eemaldame selle sujuvaks laadimiseks
+                        if (image.startsWith('/')) {
+                            image = image.substring(1);
+                        }
+
+                        if (image) {
+                            const card = document.createElement('div');
+                            card.className = 'gallery-card';
+                            card.innerHTML = `
+                                <img src="${image}" alt="${title}">
+                                <div class="gallery-card-body">
+                                    <h4>${title}</h4>
+                                    ${description ? `<p>${description}</p>` : ''}
+                                </div>
+                            `;
+                            galleryContainer.appendChild(card);
+                        }
+                    }
+                }
+            } catch (err) {
+                console.error("Galerii laadimise viga:", err);
+                galleryContainer.innerHTML = '<p>Töid ei õnnestunud laadida.</p>';
+            }
+        }
+
+        loadGallery();
+    </script>
 </body>
 </html>
