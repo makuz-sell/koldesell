@@ -3,99 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <title>Koldesell - Korstnapühkimine ja Küttekehade Remont</title>
+    <title>Koldesell - Kutseline Korstnapühkija & Pottsepp</title>
     <style>
-        body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.5; margin: 0; padding: 0; color: #333; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-        header { background: #1a1a1a; color: #fff; padding: 15px 0; }
-        .logo-nav { display: flex; align-items: center; gap: 10px; }
-        .logo-nav img { width: 42px; height: 42px; border-radius: 50%; }
-        .hero { text-align: center; padding: 40px 20px; background: #f4f4f4; }
-        .hero img { width: 80px; height: 80px; border-radius: 50%; }
-        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 40px 0; }
-        .card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; background: #fff; }
-        .cert-box { border: 2px solid #e05a47; border-radius: 8px; padding: 20px; margin: 20px 0; background: #fff5f3; }
+        :root {
+            --primary: #d9531e; /* Sooja tule/tellise toon */
+            --dark: #1e1e1e;
+            --light: #f8f9fa;
+            --text: #2c3e50;
+        }
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; margin: 0; color: var(--text); background: #fff; line-height: 1.6; }
         
-        /* Galerii stiilid */
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
-        .gallery-card { border: 1px solid #eee; border-radius: 8px; overflow: hidden; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .gallery-card img { width: 100%; height: 200px; object-fit: cover; display: block; }
-        .gallery-card-body { padding: 15px; }
-        .gallery-card-body h4 { margin: 0 0 8px 0; font-size: 1.1rem; }
+        /* Top Bar */
+        .top-bar { background: var(--dark); color: #ccc; padding: 8px 0; font-size: 0.9rem; border-bottom: 1px solid #333; }
+        .top-bar .container { display: flex; justify-content: space-between; align-items: center; }
+        .top-bar a { color: #fff; text-decoration: none; font-weight: bold; }
+
+        /* Header */
+        header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 100; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--dark); font-size: 1.4rem; font-weight: 700; }
+        .logo img { height: 45px; border-radius: 50%; }
+
+        /* Hero Section */
+        .hero { background: linear-gradient(rgba(30,30,30,0.85), rgba(30,30,30,0.85)), #2c3e50; color: #fff; padding: 80px 20px; text-align: center; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px auto; color: #ddd; }
+        .btn-primary { background: var(--primary); color: #fff; padding: 12px 28px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; transition: 0.3s; }
+        .btn-primary:hover { background: #b83f12; }
+
+        /* General Layout */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .section { padding: 60px 0; }
+        .section-title { text-align: center; margin-bottom: 40px; font-size: 2rem; color: var(--dark); }
+
+        /* Grid Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { background: #fff; border-radius: 8px; border: 1px solid #eee; box-shadow: 0 4px 12px rgba(0,0,0,0.05); padding: 25px; transition: 0.3s; }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+        .card-icon { font-size: 2.5rem; margin-bottom: 15px; color: var(--primary); }
+
+        /* Galerii Kaardid */
+        .gallery-card { background: #fff; border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .gallery-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
+        .gallery-card-body { padding: 18px; }
+        .gallery-card-body h4 { margin: 0 0 8px 0; font-size: 1.1rem; color: var(--dark); }
         .gallery-card-body p { margin: 0; font-size: 0.9rem; color: #666; }
 
+        /* Kutsetunnistuse kast */
+        .cert-badge { background: #fff8f5; border-left: 5px solid var(--primary); padding: 20px; border-radius: 4px; margin: 40px 0; display: flex; align-items: center; gap: 20px; }
+
+        /* Footer */
+        footer { background: var(--dark); color: #aaa; padding: 40px 0 20px 0; font-size: 0.95rem; }
+        footer h4 { color: #fff; margin-bottom: 15px; }
+        footer a { color: #ccc; text-decoration: none; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-bottom: 30px; }
+        .footer-bottom { border-top: 1px solid #333; padding-top: 20px; text-align: center; font-size: 0.85rem; }
+
         @media (max-width: 768px) {
-            .services { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 1.8rem; }
+            .top-bar .container { flex-direction: column; gap: 5px; text-align: center; }
+            .cert-badge { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Ülemine inforiba -->
+    <div class="top-bar">
+        <div class="container">
+            <span>📍 Teeninduspiirkond: Lõuna-Eesti</span>
+            <span>📞 Helista: <a href="tel:+37251915027">+372 5191 5027</a></span>
+        </div>
+    </div>
+
+    <!-- Päis -->
     <header>
-        <div class="container logo-nav">
-            <img src="logo.png" alt="Koldesell Logo">
-            <strong>Koldesell.ee</strong>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Koldesell Logo">
+                <span>KOLDESELL</span>
+            </a>
+            <a href="tel:+37255555555" class="btn-primary">Telli teenus</a>
         </div>
     </header>
 
+    <!-- Hero -->
     <section class="hero">
-        <img src="logo.png" alt="Koldesell Logo">
-        <h1>Ametlik Korstnapühkimine & Pisiremont</h1>
-        <p>Professionaalne korstnapühkimisteenus ja küttekehade hooldus ning väikeremont.</p>
+        <div class="container">
+            <h1>Ametlik korstnapühkimine & küttesüsteemide remont</h1>
+            <p>Puhas küttekolle tagab turvalisuse ja soojapidavuse. Väljastame kehtiva akti Päästeametile ja Küttesüsteemide portaali.</p>
+            <a href="tel:+37251915027" class="btn-primary">Võta ühendust</a>
+        </div>
     </section>
 
-    <main class="container">
-        <h2>Teenused</h2>
-        <div class="services">
+    <!-- Teenused -->
+    <section class="section container">
+        <h2 class="section-title">Meie teenused</h2>
+        <div class="grid">
             <div class="card">
-                <h3>🧹 Korstnapühkimine</h3>
-                <p>Küttesüsteemide (ahjud, pliidid, kaminad, korstnad) puhastamine ja kontroll vastavalt tuleohutusnõuetele. Väljastame ametliku akti Päästeametile.</p>
+                <div class="card-icon">🧹</div>
+                <h3>Korstnapühkimine</h3>
+                <p>Ahjude, pliitide, kaminate ja korstnalõõride puhastamine sootagavarast. Päästeameti nõuetele vastav ametlik akt.</p>
             </div>
             <div class="card">
-                <h3>🛠️ Küttekehade pisiremont</h3>
-                <p>Uste, siibrite ja rosettide vahetus ning paigaldus. Sorteeritud pragude tihendamine, segu- ja parandustööd.</p>
+                <div class="card-icon">🛠️</div>
+                <h3>Pisiremont & hooldus</h3>
+                <p>Katkiste uste, siibrite ja rosettide vahetus. Pragude tihendamine ja kuumakindlad segu- ning parandustööd.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📋</div>
+                <h3>Küttesüsteemide kontroll</h3>
+                <p>Ehitise küttesüsteemi tehnilise seisukorra hindamine, ohutuse kontroll ja eksperthinnang enne kütteperioodi.</p>
             </div>
         </div>
 
-        <div class="cert-box">
-            <h3>📜 Kutsetunnistus</h3>
-            <p><strong>Teenuse osutajal on kehtiv korstnapühkija kutsetunnistus.</strong></p>
-            <p>Kõik teostatud tööd registreeritakse ametlikus küttesüsteemide portaalis (Ametlik akt).</p>
-        </div>
-
-        <!-- TEHTUD TÖÖDE GALERII SEKTSIOON -->
-        <section style="margin: 40px 0;">
-            <h2>Tehtud tööd</h2>
-            <div id="gallery" class="gallery-grid">
-                <p>Laen tehtud töid...</p>
+        <div class="cert-badge">
+            <div style="font-size: 3rem;">📜</div>
+            <div>
+                <h4 style="margin:0 0 5px 0; color: var(--dark); font-size: 1.2rem;">Ametlikult litsentseeritud korstnapühkija</h4>
+                <p style="margin:0; color: #555;">Kõik tööd teostatakse vastavalt tuleohutuse seadusele. Registreerime teostatud töö ametlikus Küttesüsteemide portaalis.</p>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-<!-- DÜNAAMILINE DOKUMENTIDE LAADIMISE SKRIPT (ILMA GITHUB API-TA) -->
+    <!-- Tehtud tööd galerii -->
+    <section class="section" style="background: var(--light);">
+        <div class="container">
+            <h2 class="section-title">Tehtud tööd</h2>
+            <div id="gallery" class="grid">
+                <p style="text-align: center; width: 100%;">Laen tehtud töid...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jalus koos rekvisiitidega -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Koldesell</h4>
+                    <p>Professionaalne korstnapühkimis- ja küttekehade hooldusteenus.</p>
+                </div>
+                <div>
+                    <h4>Kontaktid</h4>
+                    <p>📞 Telefon: +372 5555 5555<br>
+                    ✉️ E-post: info@koldesell.ee<br>
+                    🌐 Veeb: www.koldesell.ee</p>
+                </div>
+                <div>
+                    <h4>Ettevõtte andmed</h4>
+                    <p>Registrikood: <strong>17556546</strong><br>
+                    Kutsetunnistuse nr: <strong>[Kirjuta siia nr]</strong></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Koldesell. Kõik õigused kaitstud.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- DÜNAAMILINE GALERII SKRIPT -->
     <script>
         async function loadGallery() {
             const galleryContainer = document.getElementById('gallery');
-            
-            // Siia nimekirja saame panna lisatud postituste failinimed 
-            // (või teha lahenduse, mis ei sõltu API päringulimiitidest)
-            
-            try {
-                // Katsetame laadida otse GitHub API kaudu (kui limiit taastub)
-                // KUID lisame vahemällu salvestamise (cache)
-                const repoOwner = 'makuz-sell';
-                const repoName = 'koldesell';
+            const repoOwner = 'makuz-sell';
+            const repoName = 'koldesell';
 
+            try {
                 const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/content/galerii`);
                 
-                if (response.status === 403) {
-                    galleryContainer.innerHTML = '<p>GitHubi API päringulimiit on hetkel täis. Galerii taastub mõne aja pärast automaatselt.</p>';
-                    return;
-                }
-
                 if (!response.ok) {
-                    galleryContainer.innerHTML = '<p>Hetkel teostatud töid galeriisse lisatud ei ole.</p>';
+                    galleryContainer.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">Hetkel teostatud töid galeriisse lisatud ei ole.</p>';
                     return;
                 }
 
@@ -126,7 +204,7 @@
                             const card = document.createElement('div');
                             card.className = 'gallery-card';
                             card.innerHTML = `
-                                <img src="${image}" alt="${title}" loading="lazy">
+                                <img src="/${image}" alt="${title}" loading="lazy">
                                 <div class="gallery-card-body">
                                     <h4>${title}</h4>
                                     ${description ? `<p>${description}</p>` : ''}
@@ -138,16 +216,17 @@
                 }
 
                 if (count === 0) {
-                    galleryContainer.innerHTML = '<p>Hetkel teostatud töid galeriisse lisatud ei ole.</p>';
+                    galleryContainer.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">Hetkel teostatud töid galeriisse lisatud ei ole.</p>';
                 }
 
             } catch (err) {
                 console.error("Galerii laadimise viga:", err);
-                galleryContainer.innerHTML = '<p>Töid ei õnnestunud laadida.</p>';
+                galleryContainer.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">Töid ei õnnestunud laadida.</p>';
             }
         }
 
         loadGallery();
     </script>
+
 </body>
 </html>
