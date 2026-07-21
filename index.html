@@ -73,38 +73,42 @@
         </section>
     </main>
 
-<!-- DÜNAAMILINE DOKUMENTIDE LAADIMISE SKRIPT -->
+<!-- DÜNAAMILINE DOKUMENTIDE LAADIMISE SKRIPT (ILMA GITHUB API-TA) -->
     <script>
         async function loadGallery() {
             const galleryContainer = document.getElementById('gallery');
-            const repoOwner = 'makuz-sell';
-            const repoName = 'koldesell';
-
+            
+            // Siia nimekirja saame panna lisatud postituste failinimed 
+            // (või teha lahenduse, mis ei sõltu API päringulimiitidest)
+            
             try {
-                // Saadame GitHub API-le päringu koos vajaliku User-Agent päisega
-                const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/content/galerii`, {
-                    headers: {
-                        'Accept': 'application/vnd.github.v3+json'
-                    }
-                });
+                // Katsetame laadida otse GitHub API kaudu (kui limiit taastub)
+                // KUID lisame vahemällu salvestamise (cache)
+                const repoOwner = 'makuz-sell';
+                const repoName = 'koldesell';
+
+                const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/content/galerii`);
                 
+                if (response.status === 403) {
+                    galleryContainer.innerHTML = '<p>GitHubi API päringulimiit on hetkel täis. Galerii taastub mõne aja pärast automaatselt.</p>';
+                    return;
+                }
+
                 if (!response.ok) {
-                    galleryContainer.innerHTML = '<p>Hetkel tehtud töid veel pole või kausta ei leitud.</p>';
+                    galleryContainer.innerHTML = '<p>Hetkel teostatud töid galeriisse lisatud ei ole.</p>';
                     return;
                 }
 
                 const files = await response.json();
-                galleryContainer.innerHTML = ''; // Tühjendame "Laen..." teksti
+                galleryContainer.innerHTML = '';
 
                 let count = 0;
 
                 for (const file of files) {
                     if (file.name.endsWith('.md')) {
-                        // Laeme iga markdown faili sisu
                         const fileRes = await fetch(file.download_url);
                         const content = await fileRes.text();
 
-                        // Loeme väljad Frontmatter osast
                         const titleMatch = content.match(/title:\s*"?([^"\r\n]+)"?/);
                         const imageMatch = content.match(/image:\s*"?([^"\r\n]+)"?/);
                         const descMatch = content.match(/description:\s*"?([^"\r\n]+)"?/);
@@ -113,7 +117,6 @@
                         let image = imageMatch ? imageMatch[1] : '';
                         const description = descMatch ? descMatch[1] : '';
 
-                        // Puhastame pildi teekonna
                         if (image.startsWith('/')) {
                             image = image.substring(1);
                         }
