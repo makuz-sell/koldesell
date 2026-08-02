@@ -24,6 +24,9 @@
         .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--dark); font-size: 1.4rem; font-weight: 700; }
         .logo img { height: 70px; border-radius: 50%; }
 
+        .btn-secondary { background: transparent; color: #fff; padding: 12px 28px; text-decoration: none; border-radius: 5px; font-weight: bold; border: 2px solid var(--primary); display: inline-block; transition: 0.3s; }
+        .btn-secondary:hover { background: var(--primary); }
+        
         /* Hero Section */
         .hero { background: linear-gradient(rgba(30,30,30,0.85), rgba(30,30,30,0.85)), #2c3e50; color: #fff; padding: 80px 20px; text-align: center; }
         .hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
@@ -52,6 +55,14 @@
         /* Kutsetunnistuse kast */
         .cert-badge { background: #fff8f5; border-left: 5px solid var(--primary); padding: 20px; border-radius: 4px; margin: 40px 0; display: flex; align-items: center; gap: 20px; }
 
+        /* Kontaktivormi stiilid */
+        .contact-wrapper { max-width: 600px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #eee; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark); font-size: 0.95rem; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px 15px; border: 1px solid #ccc; border-radius: 5px; font-family: inherit; font-size: 1rem; box-sizing: border-box; transition: 0.3s; background: #fdfdfd; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(217, 83, 30, 0.15); background: #fff; }
+        .form-group textarea { resize: vertical; }
+        
         /* Footer */
         footer { background: var(--dark); color: #aaa; padding: 40px 0 20px 0; font-size: 0.95rem; }
         footer h4 { color: #fff; margin-bottom: 15px; }
@@ -92,7 +103,26 @@
         <div class="container">
             <h1>Ametlik korstnapühkimine & küttesüsteemide remont</h1>
             <p>Puhas küttekolle tagab turvalisuse ja soojapidavuse. Väljastame kehtiva akti Päästeametile ja Küttesüsteemide portaali.</p>
-            <a href="tel:+37251915027" class="btn-primary">Võta ühendust</a>
+            <div class="hero-buttons" style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                
+                <a href="tel:+37251915027" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
+                    <!-- Telefoni SVG ikoon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    Helista
+                </a>
+                
+                <a href="#kontakt" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 8px;">
+                    <!-- Ümbriku SVG ikoon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    Kirjuta meile
+                </a>
+                
+            </div>
         </div>
     </section>
 
@@ -134,6 +164,51 @@
         </div>
     </section>
 
+    <!-- Kontakt / Kontaktivorm -->
+    <section id="kontakt" class="section" style="background: var(--light);">
+        <div class="container">
+            <h2 class="section-title">Võta ühendust</h2>
+            <div class="contact-wrapper">
+                
+                <!-- Web3Forms vorm -->
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                    
+                    <!-- Asenda value="..." oma Web3Forms võtmega -->
+                    <input type="hidden" name="access_key" value="f7548aac-54a4-4c12-b9eb-7f535fec7bed">
+                    
+                    <!-- Spämmikaitse (peidetud) -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                    <!-- Vormi väljad -->
+                    <div class="form-group">
+                        <label for="name">Sinu nimi *</label>
+                        <input type="text" id="name" name="name" required placeholder="nt. Jaan Tamm">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Telefon *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+372 5555 5555">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">E-post</label>
+                        <input type="email" id="email" name="email" placeholder="jaan@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Sõnum, aadress ja muu info *</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Kirjelda lühidalt oma soovi ja asukohta..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="width: 100%; font-size: 1.1rem; padding: 15px;">Saada kiri</button>
+                    
+                    <!-- Kliendile näidatav teade peale saatmist -->
+                    <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                </form>
+            </div>
+        </div>
+    </section>
+    
     <!-- Jalus koos rekvisiitidega -->
     <footer>
         <div class="container">
