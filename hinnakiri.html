@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hinnakiri - Koldesell</title>
+    <style>
+        :root { --primary: #d9531e; --dark: #1e1e1e; --light: #f8f9fa; --text: #2c3e50; }
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; margin: 0; color: var(--text); background: var(--light); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .section-title { text-align: center; margin-bottom: 40px; font-size: 2rem; color: var(--dark); padding-top: 40px; }
+        
+		/* Päis ja Navigatsioon */
+        header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 100; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; max-width: 1100px; margin: 0 auto; flex-wrap: wrap; }
+        
+        /* SUURENDATUD LOGO ARVUTIS (pilt 55px ja tekst 1.6rem) */
+        .logo { display: flex; align-items: center; gap: 15px; text-decoration: none; color: var(--dark); font-size: 1.6rem; font-weight: 700; }
+        .logo img { height: 55px; border-radius: 50%; }
+        
+        .nav-links { display: flex; gap: 20px; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; font-size: 1.05rem; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-links a.active { color: var(--primary); }
+            
+		@media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .top-bar .container { flex-direction: column; gap: 5px; text-align: center; }
+            .cert-badge { flex-direction: column; text-align: center; }
+            
+            .nav-container { flex-direction: column; gap: 15px; padding: 15px; }
+            
+            /* SUURENDATUD LOGO MOBIILIS (pilt 50px ja tekst 1.4rem) */
+            .logo { font-size: 1.4rem; }
+            .logo img { height: 50px; }
+            
+            .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; font-size: 1rem; border-top: 1px solid #eee; padding-top: 15px; width: 100%; }
+        }
+
+        /* Hinnakirja stiilid */
+        .pricing-wrapper { max-width: 800px; margin: 0 auto; background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #eee; overflow: hidden; margin-bottom: 60px; }
+        .pricing-header { background: var(--dark); color: #fff; padding: 20px; text-align: center; }
+        .pricing-header h3 { margin: 0; font-size: 1.5rem; color: #fff; }
+        .pricing-list { list-style: none; padding: 0; margin: 0; }
+        .pricing-item { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; border-bottom: 1px solid #f0f0f0; transition: background 0.2s; }
+        .pricing-item:last-child { border-bottom: none; }
+        .pricing-item:hover { background: #fdfdfd; }
+        .pricing-name { font-weight: 600; color: var(--text); flex: 1; padding-right: 15px; }
+        .pricing-desc { display: block; font-size: 0.85rem; color: #666; font-weight: normal; margin-top: 4px; }
+        .pricing-price { font-weight: bold; color: var(--primary); font-size: 1.2rem; white-space: nowrap; }
+        .pricing-info { background: #fff8f5; padding: 20px; font-size: 0.9rem; color: #555; text-align: center; border-top: 1px solid #eee; }
+
+        /* Jalus */
+        footer { background: var(--dark); color: #aaa; padding: 40px 0 20px 0; font-size: 0.95rem; margin-top: auto; }
+        footer h4 { color: #fff; margin-bottom: 15px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-bottom: 30px; }
+        .footer-bottom { border-top: 1px solid #333; padding-top: 20px; text-align: center; font-size: 0.85rem; }
+		
+    </style>
+</head>
+<body>
+
+    <!-- Päis -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Koldesell Logo">
+                <span>KOLDESELL</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="index.html">Avaleht</a>
+                <a href="hinnakiri.html" class="active">Hinnakiri</a>
+                <a href="galerii.html">Galerii</a>
+                <a href="index.html#kontakt">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 class="section-title">Teenuste hinnakiri</h1>
+        
+        <div class="pricing-wrapper">
+            <div class="pricing-header">
+                <h3>Korstnapühkimine ja hooldus</h3>
+            </div>
+            <ul class="pricing-list">
+                <li class="pricing-item">
+                    <div class="pricing-name">
+                        Miinimumtasu / Baastasu
+                        <span class="pricing-desc">Sisaldab 1 korstna ja kuni 2 küttekolde (ahi, pliit, kamin) puhastamist ning ametlikku akti.</span>
+                    </div>
+                    <div class="pricing-price">XX €</div>
+                </li>
+                <li class="pricing-item">
+                    <div class="pricing-name">
+                        Iga lisanduv küttekolle
+                        <span class="pricing-desc">Ahi, soojamüüriga pliit, kamin, saunakeris vms.</span>
+                    </div>
+                    <div class="pricing-price">XX € / tk</div>
+                </li>
+                <li class="pricing-item">
+                    <div class="pricing-name">
+                        Iga lisanduv korsten
+                        <span class="pricing-desc">Sisaldab korstnalõõride puhastust.</span>
+                    </div>
+                    <div class="pricing-price">XX € / tk</div>
+                </li>
+                <li class="pricing-item">
+                    <div class="pricing-name">
+                        Ummistuste likvideerimine
+                        <span class="pricing-desc">Pigi eemaldamine, freesimine, linnupesade eemaldamine.</span>
+                    </div>
+                    <div class="pricing-price">XX € / h</div>
+                </li>
+                <li class="pricing-item">
+                    <div class="pricing-name">
+                        Pottsepatööd ja pisiremont
+                        <span class="pricing-desc">Kividetailide vahetus, uste/siibrite paigaldus, vuukimine.</span>
+                    </div>
+                    <div class="pricing-price">Kokkuleppel</div>
+                </li>
+            </ul>
+            <div class="pricing-info">
+                <p style="margin: 0;"><strong>Transporditasu:</strong> Võru linnas ja lähiümbruses sisaldub hinnas. Väljaspool Võru lisandub transporditasu <strong>X.XX € / km</strong>.</p>
+                <p style="margin: 5px 0 0 0; font-size: 0.85rem;"><em>* Hinnakiri on indikatiivne, täpne hind selgub objektil või eelneval kokkuleppel.</em></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Koldesell</h4>
+                    <p>Professionaalne korstnapühkimis- ja küttekehade hooldusteenus.</p>
+                </div>
+                <div>
+                    <h4>Ettevõtte andmed</h4>
+                    <p style="margin: 0; line-height: 1.8;">
+                        Registrikood: <strong>17556546</strong><br>
+                        Kutsetunnistused:<br>
+                        • Korstnapühkija (tase 3): <strong>231956</strong><br>
+                        • Pottsepp-sell (tase 3): <strong>230140</strong>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Koldesell. Kõik õigused kaitstud.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
