@@ -18,14 +18,18 @@
         .top-bar .container { display: flex; justify-content: space-between; align-items: center; }
         .top-bar a { color: #fff; text-decoration: none; font-weight: bold; }
 
-        /* Header */
+		/* Päis ja Navigatsioon */
         header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 100; }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
-        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--dark); font-size: 1.4rem; font-weight: 700; }
-        .logo img { height: 70px; border-radius: 50%; }
-
-        .btn-secondary { background: transparent; color: #fff; padding: 12px 28px; text-decoration: none; border-radius: 5px; font-weight: bold; border: 2px solid var(--primary); display: inline-block; transition: 0.3s; }
-        .btn-secondary:hover { background: var(--primary); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; max-width: 1100px; margin: 0 auto; flex-wrap: wrap; }
+        
+        /* SUURENDATUD LOGO ARVUTIS (pilt 55px ja tekst 1.6rem) */
+        .logo { display: flex; align-items: center; gap: 15px; text-decoration: none; color: var(--dark); font-size: 1.6rem; font-weight: 700; }
+        .logo img { height: 55px; border-radius: 50%; }
+        
+        .nav-links { display: flex; gap: 20px; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; font-size: 1.05rem; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-links a.active { color: var(--primary); }
         
         /* Hero Section */
         .hero { background: linear-gradient(rgba(30,30,30,0.85), rgba(30,30,30,0.85)), #2c3e50; color: #fff; padding: 80px 20px; text-align: center; }
@@ -33,6 +37,8 @@
         .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px auto; color: #ddd; }
         .btn-primary { background: var(--primary); color: #fff; padding: 12px 28px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; transition: 0.3s; }
         .btn-primary:hover { background: #b83f12; }
+		.btn-secondary { background: transparent; color: #fff; padding: 12px 28px; text-decoration: none; border-radius: 5px; font-weight: bold; border: 2px solid var(--primary); display: inline-block; transition: 0.3s; }
+        .btn-secondary:hover { background: var(--primary); }
 
         /* General Layout */
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
@@ -70,24 +76,20 @@
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-bottom: 30px; }
         .footer-bottom { border-top: 1px solid #333; padding-top: 20px; text-align: center; font-size: 0.85rem; }
 
-        @media (max-width: 768px) {
+		@media (max-width: 768px) {
             .hero h1 { font-size: 1.8rem; }
             .top-bar .container { flex-direction: column; gap: 5px; text-align: center; }
             .cert-badge { flex-direction: column; text-align: center; }
             
-            /* Uued reeglid mobiilipäise korda tegemiseks */
-            .nav-container { padding: 10px 15px; }
-            .logo { font-size: 1.2rem; gap: 10px; }
-            .logo img { height: 42px; }
+            .nav-container { flex-direction: column; gap: 15px; padding: 15px; }
             
-            /* Teeme ainult päises oleva nupu väiksemaks ja sunnime ühele reale */
-            header .btn-primary { 
-                padding: 8px 14px; 
-                font-size: 0.9rem; 
-                white-space: nowrap; 
-            }
+            /* SUURENDATUD LOGO MOBIILIS (pilt 50px ja tekst 1.4rem) */
+            .logo { font-size: 1.4rem; }
+            .logo img { height: 50px; }
+            
+            .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; font-size: 1rem; border-top: 1px solid #eee; padding-top: 15px; width: 100%; }
         }
-        }
+         
     </style>
 </head>
 <body>
@@ -102,12 +104,18 @@
 
     <!-- Päis -->
     <header>
-        <div class="container nav-container">
-            <a href="#" class="logo">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
                 <img src="logo.png" alt="Koldesell Logo">
                 <span>KOLDESELL</span>
             </a>
-            <a href="tel:+37251915027" class="btn-primary">Telli teenus</a>
+            
+            <nav class="nav-links">
+                <a href="index.html" class="active">Avaleht</a>
+                <a href="hinnakiri.html">Hinnakiri</a>
+                <a href="galerii.html">Galerii</a>
+                <a href="index.html#kontakt">Kontakt</a>
+            </nav>
         </div>
     </header>
 
@@ -163,16 +171,6 @@
             <div>
                 <h4 style="margin:0 0 5px 0; color: var(--dark); font-size: 1.2rem;">Ametlikult litsentseeritud korstnapühkija</h4>
                 <p style="margin:0; color: #555;">Kõik tööd teostatakse vastavalt tuleohutuse seadusele. Registreerime teostatud töö ametlikus Küttesüsteemide portaalis.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tehtud tööd galerii -->
-    <section class="section" style="background: var(--light);">
-        <div class="container">
-            <h2 class="section-title">Tehtud tööd</h2>
-            <div id="gallery" class="grid">
-                <p style="text-align: center; width: 100%;">Laen tehtud töid...</p>
             </div>
         </div>
     </section>
