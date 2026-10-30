@@ -20,64 +20,7 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <meta name="theme-color" content="#1e1e1e">
-    <style>
-        :root { --primary: #d9531e; --dark: #1e1e1e; --light: #f8f9fa; --text: #2c3e50; }
-        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; margin: 0; color: var(--text); background: var(--light); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-        .section-title { text-align: center; margin-bottom: 40px; font-size: 2rem; color: var(--dark); padding-top: 40px; }
-        
-		/* Päis ja Navigatsioon */
-        header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 100; }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 6px 20px; max-width: 1100px; margin: 0 auto; flex-wrap: wrap; }
-        
-        /* LOGO ARVUTIS */
-        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--dark); font-size: 1.4rem; font-weight: 700; }
-        .logo img { height: 48px; width: auto; object-fit: contain; }
-        
-        .nav-links { display: flex; gap: 20px; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; font-size: 1.05rem; transition: color 0.2s; }
-        .nav-links a:hover { color: #b8410f; }
-        .nav-links a.active { color: #b8410f; }
-            
-		@media (max-width: 768px) {
-            .section-title { font-size: 1.6rem; padding-top: 28px; margin-bottom: 28px; }
-            .hero h1 { font-size: 1.8rem; }
-            .top-bar .container { flex-direction: column; gap: 5px; text-align: center; }
-            .cert-badge { flex-direction: column; text-align: center; }
-            
-            /* LOGO MOBIILIS */
-            .logo { font-size: 1.25rem; gap: 10px; }
-            .logo img { height: 46px; }
-            .nav-container { flex-direction: column; gap: 8px; padding: 8px 15px; }
-            .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; font-size: 0.95rem; border-top: 1px solid #eee; padding-top: 8px; width: 100%; }
-        }
-
-        /* Hinnakirja stiilid */
-        main.container { width: 100%; min-width: 0; box-sizing: border-box; }  /* ära lase sisul lehte laiemaks venitada */
-        .pricing-cta { max-width: 800px; margin: -30px auto 60px auto; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-        .pricing-cta a { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 26px; border-radius: 999px; font-weight: 700; text-decoration: none; border: 2px solid #b8410f; }
-        .pricing-cta .cta-fill { background: #b8410f; color: #fff; }
-        .pricing-cta .cta-line { color: #b8410f; background: #fff; }
-        @media (max-width: 480px) { .pricing-cta a { width: 100%; } }
-        .pricing-wrapper { max-width: 800px; margin: 0 auto; background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #eee; overflow: hidden; margin-bottom: 60px; }
-        .pricing-header { background: var(--dark); color: #fff; padding: 20px; text-align: center; }
-        .pricing-header h2 { margin: 0; font-size: 1.5rem; color: #fff; }
-        .pricing-list { list-style: none; padding: 0; margin: 0; }
-        .pricing-item { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; border-bottom: 1px solid #f0f0f0; transition: background 0.2s; }
-        .pricing-item:last-child { border-bottom: none; }
-        .pricing-item:hover { background: #fdfdfd; }
-        .pricing-name { font-weight: 600; color: var(--text); flex: 1; padding-right: 15px; }
-        .pricing-desc { display: block; font-size: 0.85rem; color: #666; font-weight: normal; margin-top: 4px; }
-        .pricing-price { font-weight: bold; color: var(--primary); font-size: 1.2rem; white-space: nowrap; }
-        .pricing-info { background: #fff8f5; padding: 20px; font-size: 0.9rem; color: #555; text-align: center; border-top: 1px solid #eee; }
-
-        /* Jalus */
-        footer { background: var(--dark); color: #aaa; padding: 40px 0 20px 0; font-size: 0.95rem; margin-top: auto; }
-        footer h2 { color: #fff; margin-bottom: 15px; font-size: 1rem; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-bottom: 30px; }
-        .footer-bottom { border-top: 1px solid #333; padding-top: 20px; text-align: center; font-size: 0.85rem; }
-		
-    </style>
+    <link rel="stylesheet" href="css/stiil.css">
 
     <!-- cms:jsonld -->
     <script type="application/ld+json">
@@ -212,6 +155,21 @@
 </head>
 <body>
 
+    <!-- Ülemine inforiba -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary-on-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span class="hide-mobile">Teeninduspiirkond: <span data-cms="piirkond">Võrumaa, Tartumaa ja Lõuna-Eesti</span></span>
+                <span class="show-mobile" data-cms="piirkond_lyhike">Lõuna-Eesti</span>
+            </div>
+            <div class="top-bar-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary-on-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <span class="hide-mobile">Helista:</span> <a href="tel:+37251915027" data-cms-link="telefon"><span data-cms="telefon">+372 5191 5027</span></a>
+            </div>
+        </div>
+    </div>
+
     <!-- Päis -->
     <header>
         <div class="nav-container">
@@ -219,86 +177,124 @@
                 <img src="logo-96.png" alt="Koldesell logo" width="47" height="48">
                 <span>KOLDESELL</span>
             </a>
-            
-            <nav class="nav-links">
-                <a href="index.html">Avaleht</a>
-                <a href="hinnakiri.html" class="active">Hinnakiri</a>
-                <a href="galerii.html">Galerii</a>
-                <a href="index.html#kontakt">Kontakt</a>
-            </nav>
+
+            <div class="nav-right">
+                <nav class="nav-links" aria-label="Peamenüü">
+                    <a href="index.html">Avaleht</a>
+                    <a href="hinnakiri.html" class="active" aria-current="page">Hinnakiri</a>
+                    <a href="galerii.html">Galerii</a>
+                    <a href="index.html#kontakt">Kontakt</a>
+                </nav>
+                <div class="nav-cta">
+                    <a href="tel:+37251915027" data-cms-link="telefon" class="nav-phone" aria-label="Helista"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></a>
+                    <a href="index.html#kontakt" class="btn btn-primary btn-sm">Telli korstnapühkimine</a>
+                </div>
+            </div>
         </div>
     </header>
 
-    <main class="container">
-        <h1 class="section-title">Korstnapühkimise ja ahju remondi hinnakiri</h1>
-        
-        <div class="pricing-wrapper">
-            <div class="pricing-header">
-                <h2>Korstnapühkimine ja hooldus</h2>
-            </div>
-            <ul class="pricing-list">
-                <li class="pricing-item">
-                    <div class="pricing-name">
-                        Miinimumtasu / Baastasu
-                        <span class="pricing-desc">Sisaldab 1 korstna ja kuni 2 kütteseadme (ahi, pliit, kamin) puhastamist ning ametlikku akti.</span>
-                    </div>
-                    <div class="pricing-price"><span data-cms="baashind">70</span> €</div>
-                </li>
-                <li class="pricing-item">
-                    <div class="pricing-name">
-                        Iga lisanduv kütteseade
-                        <span class="pricing-desc">Ahi, soojamüüriga pliit, kamin, saunakeris vms.</span>
-                    </div>
-                    <div class="pricing-price">20 € / tk</div>
-                </li>
-                <li class="pricing-item">
-                    <div class="pricing-name">
-                        Iga lisanduv korsten
-                        <span class="pricing-desc">Sisaldab korstnalõõride puhastust.</span>
-                    </div>
-                    <div class="pricing-price">20 € / tk</div>
-                </li>
-                <li class="pricing-item">
-                    <div class="pricing-name">
-                        Aukude toosimine
-                        <span class="pricing-desc"> </span>
-                    </div>
-                    <div class="pricing-price">60 € / tk</div>
-                </li>
-                <li class="pricing-item">
-                    <div class="pricing-name">
-                        Ummistuste likvideerimine
-                        <span class="pricing-desc"> </span>
-                    </div>
-                    <div class="pricing-price">50 € / h</div>
-                </li>
-                <li class="pricing-item">
-                    <div class="pricing-name">
-                        Pigieemaldus kettpuhastiga
-                        <span class="pricing-desc"> </span>
-                    </div>
-                    <div class="pricing-price">Al. 60 € / lõõr</div>
-                </li>
-                <li class="pricing-item">
-                    <div class="pricing-name">
-                        Pottsepatööd ja pisiremont
-                        <span class="pricing-desc">Kividetailide vahetus, uste/siibrite paigaldus, vuukimine.</span>
-                    </div>
-                    <div class="pricing-price">Kokkuleppel</div>
-                </li>
-            </ul>
-            <div class="pricing-info">
-                <p style="margin: 0;"><strong>Transporditasu:</strong> Võru linnas ja lähiümbruses(20km) sisaldub hinnas. Väljaspool Võru lisandub transporditasu <strong>0.50€/km</strong>.</p>
-                <p style="margin: 5px 0 0 0; font-size: 0.85rem;"><em>* Hinnakiri on indikatiivne, täpne hind selgub objektil või eelneval kokkuleppel.</em></p>
-            </div>
+    <main>
+    <section class="page-head">
+        <div class="container">
+            <span class="eyebrow">Hinnakiri</span>
+            <h1>Korstnapühkimise ja ahju remondi hinnakiri</h1>
+            <p>Selged hinnad korstnapühkimisele ja ahjude pisiremondile Võrumaal, Tartumaal ja mujal Lõuna-Eestis. Iga pühkimise järel väljastame ametliku akti.</p>
         </div>
+    </section>
 
-        <div class="pricing-cta">
-            <a href="tel:+37251915027" data-cms-link="telefon" class="cta-fill">Helista <span data-cms="telefon">+372 5191 5027</span></a>
-            <a href="index.html#kontakt" class="cta-line">Telli korstnapühkimine</a>
+    <section class="page-section">
+        <div class="container">
+            <div class="price-groups">
+            <div class="price-card">
+                <div class="price-card-head">
+                    <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg></div>
+                    <div>
+                        <h2>Korstnapühkimine ja hooldus</h2>
+                        <p>Puhastus koos ametliku aktiga Päästeametile ja Küttesüsteemide portaali.</p>
+                    </div>
+                </div>
+                <ul class="price-list">
+                    <li class="price-item featured">
+                        <div class="price-name">Miinimumtasu / baastasu
+                            <span class="price-desc">Sisaldab 1 korstna ja kuni 2 kütteseadme (ahi, pliit, kamin) puhastamist ning ametlikku akti.</span>
+                        </div>
+                        <div class="price-value"><span data-cms="baashind">70</span> €</div>
+                    </li>
+                    <li class="price-item">
+                        <div class="price-name">Iga lisanduv kütteseade
+                            <span class="price-desc">Ahi, soojamüüriga pliit, kamin, saunakeris vms.</span>
+                        </div>
+                        <div class="price-value">20 € <small>/ tk</small></div>
+                    </li>
+                    <li class="price-item">
+                        <div class="price-name">Iga lisanduv korsten
+                            <span class="price-desc">Sisaldab korstnalõõride puhastust.</span>
+                        </div>
+                        <div class="price-value">20 € <small>/ tk</small></div>
+                    </li>
+                    <li class="price-item">
+                        <div class="price-name">Aukude toosimine
+                        </div>
+                        <div class="price-value">60 € <small>/ tk</small></div>
+                    </li>
+                    <li class="price-item">
+                        <div class="price-name">Ummistuste likvideerimine
+                        </div>
+                        <div class="price-value">50 € <small>/ h</small></div>
+                    </li>
+                    <li class="price-item">
+                        <div class="price-name">Pigieemaldus kettpuhastiga
+                        </div>
+                        <div class="price-value"><small>alates</small> 60 € <small>/ lõõr</small></div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="price-card">
+                <div class="price-card-head">
+                    <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></div>
+                    <div>
+                        <h2>Ahju remont ja pottsepatööd</h2>
+                        <p>Väiksemad remonditööd ahjudele, pliitidele ja kaminatele.</p>
+                    </div>
+                </div>
+                <ul class="price-list">
+                    <li class="price-item">
+                        <div class="price-name">Pottsepatööd ja pisiremont
+                            <span class="price-desc">Kividetailide vahetus, uste ja siibrite paigaldus, vuukimine.</span>
+                        </div>
+                        <div class="price-value">Kokkuleppel</div>
+                    </li>
+                </ul>
+            </div>
+            </div>
+
+            <div class="price-note">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                <div>
+                    <p><strong>Transporditasu:</strong> Võru linnas ja lähiümbruses (kuni 20 km) sisaldub hinnas. Väljaspool seda lisandub transporditasu <strong>0,50 €/km</strong>.</p>
+                    <p>Hinnakiri on indikatiivne – täpne hind selgub objektil või eelneval kokkuleppel.</p>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <!-- Lõpu CTA -->
+    <section class="cta-band">
+        <div class="container">
+            <div>
+                <h2>Küsi täpset hinda või broneeri aeg</h2>
+                <p>Helista või kirjuta – täpne hind sõltub korstnate ja kütteseadmete arvust.</p>
+            </div>
+            <div class="cta-buttons">
+                <a href="tel:+37251915027" data-cms-link="telefon" class="btn btn-white"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> Helista kohe</a>
+                <a href="index.html#kontakt" class="btn btn-outline"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> Võta ühendust</a>
+            </div>
+        </div>
+    </section>
     </main>
 
+    <!-- Jalus koos rekvisiitidega -->
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -311,27 +307,27 @@
                     <ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
                         <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
                             <!-- Telefoni ikoon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-on-dark)" aria-hidden="true" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                             </svg>
-                            Telefon: <a href="tel:+37251915027" data-cms-link="telefon" style="color: #aaa; text-decoration: none;"><span data-cms="telefon">+372 5191 5027</span></a>
+                            Telefon: <a href="tel:+37251915027" data-cms-link="telefon"><span data-cms="telefon">+372 5191 5027</span></a>
                         </li>
                         <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
                             <!-- Ümbriku ikoon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-on-dark)" aria-hidden="true" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
-                            E-post: <a href="mailto:info@koldesell.ee" data-cms-link="email" style="color: #aaa; text-decoration: none;"><span data-cms="email">info@koldesell.ee</span></a>
+                            E-post: <a href="mailto:info@koldesell.ee" data-cms-link="email"><span data-cms="email">info@koldesell.ee</span></a>
                         </li>
                         <li style="display: flex; align-items: center; gap: 10px;">
                             <!-- Veebi ikoon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-on-dark)" aria-hidden="true" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="10"></circle>
                                 <line x1="2" y1="12" x2="22" y2="12"></line>
                                 <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
                             </svg>
-                            Veeb: www.koldesell.ee
+                            Veeb: <a href="https://koldesell.ee/">www.koldesell.ee</a>
                         </li>
                     </ul>
                 </div>
