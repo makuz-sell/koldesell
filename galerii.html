@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tehtud tööd - Koldesell</title>
+    <title>Tehtud tööd: ahju remont ja korstnapühkimine | Koldesell</title>
+    <meta name="description" content="Vaata Koldeselli tehtud ahju remonditöid ja pottsepatöid Võrumaal, Tartumaal ja mujal Lõuna-Eestis.">
+    <link rel="canonical" href="https://koldesell.ee/galerii.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="et_EE">
+    <meta property="og:site_name" content="Koldesell">
+    <meta property="og:title" content="Tehtud tööd – ahju remont ja pottsepatööd Lõuna-Eestis">
+    <meta property="og:description" content="Näited Koldeselli tehtud ahju remonditöödest Võrumaal, Tartumaal ja Lõuna-Eestis.">
+    <meta property="og:url" content="https://koldesell.ee/galerii.html">
+    <meta property="og:image" content="https://koldesell.ee/logo.png">
+    <meta property="og:image:alt" content="Koldesell logo">
+    <meta name="twitter:card" content="summary">
 	<link rel="icon" type="image/png" href="logo.png">
     <link rel="apple-touch-icon" href="logo.png">
     <style>
@@ -42,62 +53,106 @@
         .gallery-card { background: #fff; border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         .gallery-card img { width: 100%; height: 250px; object-fit: contain; display: block; background: #f8f9fa; }
         .gallery-card-body { padding: 18px; }
-        .gallery-card-body h4 { margin: 0 0 8px 0; font-size: 1.1rem; color: var(--dark); }
+        .gallery-card-body h2 { margin: 0 0 8px 0; font-size: 1.1rem; color: var(--dark); }
         .gallery-card-body p { margin: 0; font-size: 0.9rem; color: #666; }
 
         /* Jalus */
         footer { background: var(--dark); color: #aaa; padding: 40px 0 20px 0; font-size: 0.95rem; margin-top: auto; }
-        footer h4 { color: #fff; margin-bottom: 15px; }
+        footer h2 { color: #fff; margin-bottom: 15px; font-size: 1rem; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-bottom: 30px; }
         .footer-bottom { border-top: 1px solid #333; padding-top: 20px; text-align: center; font-size: 0.85rem; }
 
     </style>
 
-<!-- Google SEO JSON-LD -->
+<!-- Schema.org struktureeritud andmed (kohalik SEO) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+      "additionalType": "http://www.productontology.org/id/Chimney_sweep",
+      "@id": "https://koldesell.ee/#business",
       "name": "Koldesell",
+      "legalName": "Koldesell OÜ",
+      "url": "https://koldesell.ee/",
+      "logo": "https://koldesell.ee/logo.png",
       "image": "https://koldesell.ee/logo.png",
-      "description": "Professionaalne korstnapühkija ja pottsepp Lõuna-Eestis. Ahjude remont, küttesüsteemide kontroll ja ametlik akt Päästeametile.",
-      "url": "https://koldesell.ee",
+      "description": "Korstnapühkija Võrus: korstnapühkimine Lõuna-Eestis, väiksemad ahju remonditööd ja küttesüsteemide kontroll Võrumaal ja Tartumaal. Ametlik akt Päästeametile.",
       "telephone": "+37251915027",
+      "email": "info@koldesell.ee",
+      "priceRange": "€€",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "Äriregistri kood",
+        "value": "17556546"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Võru",
+        "addressRegion": "Võru maakond",
+        "addressCountry": "EE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 57.8462,
+        "longitude": 27.0019
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+37251915027",
+        "email": "info@koldesell.ee",
+        "areaServed": "EE",
+        "availableLanguage": ["et"]
+      },
       "areaServed": [
-        {
-          "@type": "GeoCircle",
-          "geoMidpoint": {
-            "@type": "GeoCoordinates",
-            "latitude": 57.8462,
-            "longitude": 27.0019
+        { "@type": "AdministrativeArea", "name": "Võrumaa" },
+        { "@type": "AdministrativeArea", "name": "Tartumaa" },
+        { "@type": "Place", "name": "Lõuna-Eesti" },
+        { "@type": "City", "name": "Võru" },
+        { "@type": "City", "name": "Tartu" },
+        { "@type": "City", "name": "Põlva" },
+        { "@type": "City", "name": "Valga" },
+        { "@type": "City", "name": "Elva" },
+        { "@type": "City", "name": "Otepää" }
+      ],
+      "knowsAbout": ["korstnapühkimine", "ahju remont", "pottsepatööd", "küttesüsteemide kontroll"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Koldeselli teenused",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Korstnapühkimine",
+              "description": "Korstnate, ahjude, pliitide ja kaminate puhastamine koos ametliku aktiga Päästeametile ja Küttesüsteemide portaali.",
+              "serviceType": "Korstnapühkimine",
+              "areaServed": "Lõuna-Eesti"
+            },
+            "price": "70",
+            "priceCurrency": "EUR"
           },
-          "geoRadius": 50000
-        },
-        {
-          "@type": "City",
-          "name": "Võru"
-        },
-        {
-          "@type": "City",
-          "name": "Tartu"
-        },
-        {
-          "@type": "City",
-          "name": "Põlva"
-        },
-        {
-          "@type": "City",
-          "name": "Valga"
-        },
-        {
-          "@type": "City",
-          "name": "Elva"
-        },
-        {
-          "@type": "City",
-          "name": "Otepää"
-        }
-      ]
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Väiksemad ahju remonditööd",
+              "description": "Ahjude ja pliitide pisiremont: kividetailide vahetus, uste ja siibrite paigaldus, vuukimine.",
+              "serviceType": "Ahju remont",
+              "areaServed": "Lõuna-Eesti"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Küttesüsteemide kontroll",
+              "serviceType": "Küttesüsteemide kontroll",
+              "areaServed": "Lõuna-Eesti"
+            }
+          }
+        ]
+      }
     }
     </script>
 
@@ -122,7 +177,7 @@
     </header>
 
     <main class="container">
-        <h1 class="section-title">Tehtud tööd</h1>
+        <h1 class="section-title">Tehtud tööd: ahju remont ja pottsepatööd Lõuna-Eestis</h1>
         <div id="gallery" class="grid">
             <p style="text-align: center; width: 100%;">Laen tehtud töid...</p>
         </div>
@@ -132,11 +187,11 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <h4>Koldesell OÜ</h4>
+                    <h2>Koldesell OÜ</h2>
                     <p>Professionaalne korstnapühkimis- ja küttekehade hooldusteenus.</p>
                 </div>
                 <div>
-                    <h4>Kontaktid</h4>
+                    <h2>Kontaktid</h2>
                     <ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
                         <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
                             <!-- Telefoni ikoon -->
@@ -165,7 +220,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h4>Ettevõtte andmed</h4>
+                    <h2>Ettevõtte andmed</h2>
                     <p>Registrikood: <strong>17556546</strong><br>
                     Kutsetunnistused:<br>
                     • Korstnapühkija (tase 3): <strong>231956</strong><br>
@@ -225,7 +280,7 @@
                             card.innerHTML = `
                                 <img src="${imageUrl}" alt="${title}" loading="lazy">
                                 <div class="gallery-card-body">
-                                    <h4>${title}</h4>
+                                    <h2>${title}</h2>
                                     ${description ? `<p>${description}</p>` : ''}
                                 </div>
                             `;
