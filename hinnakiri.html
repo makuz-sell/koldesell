@@ -15,8 +15,9 @@
     <meta property="og:image" content="https://koldesell.ee/logo.png">
     <meta property="og:image:alt" content="Koldesell logo">
     <meta name="twitter:card" content="summary">
-	<link rel="icon" type="image/png" href="logo.png">
-    <link rel="apple-touch-icon" href="logo.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#1e1e1e">
     <style>
         :root { --primary: #d9531e; --dark: #1e1e1e; --light: #f8f9fa; --text: #2c3e50; }
         body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; margin: 0; color: var(--text); background: var(--light); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
@@ -33,10 +34,11 @@
         
         .nav-links { display: flex; gap: 20px; align-items: center; }
         .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; font-size: 1.05rem; transition: color 0.2s; }
-        .nav-links a:hover { color: var(--primary); }
-        .nav-links a.active { color: var(--primary); }
+        .nav-links a:hover { color: #b8410f; }
+        .nav-links a.active { color: #b8410f; }
             
 		@media (max-width: 768px) {
+            .section-title { font-size: 1.6rem; padding-top: 28px; margin-bottom: 28px; }
             .hero h1 { font-size: 1.8rem; }
             .top-bar .container { flex-direction: column; gap: 5px; text-align: center; }
             .cert-badge { flex-direction: column; text-align: center; }
@@ -49,6 +51,12 @@
         }
 
         /* Hinnakirja stiilid */
+        main.container { width: 100%; min-width: 0; box-sizing: border-box; }  /* ära lase sisul lehte laiemaks venitada */
+        .pricing-cta { max-width: 800px; margin: -30px auto 60px auto; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .pricing-cta a { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 26px; border-radius: 999px; font-weight: 700; text-decoration: none; border: 2px solid #b8410f; }
+        .pricing-cta .cta-fill { background: #b8410f; color: #fff; }
+        .pricing-cta .cta-line { color: #b8410f; background: #fff; }
+        @media (max-width: 480px) { .pricing-cta a { width: 100%; } }
         .pricing-wrapper { max-width: 800px; margin: 0 auto; background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #eee; overflow: hidden; margin-bottom: 60px; }
         .pricing-header { background: var(--dark); color: #fff; padding: 20px; text-align: center; }
         .pricing-header h2 { margin: 0; font-size: 1.5rem; color: #fff; }
@@ -168,7 +176,7 @@
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="logo.png" alt="Koldesell Logo">
+                <img src="logo-96.png" alt="Koldesell logo" width="47" height="48">
                 <span>KOLDESELL</span>
             </a>
             
@@ -243,6 +251,11 @@
                 <p style="margin: 0;"><strong>Transporditasu:</strong> Võru linnas ja lähiümbruses(20km) sisaldub hinnas. Väljaspool Võru lisandub transporditasu <strong>0.50€/km</strong>.</p>
                 <p style="margin: 5px 0 0 0; font-size: 0.85rem;"><em>* Hinnakiri on indikatiivne, täpne hind selgub objektil või eelneval kokkuleppel.</em></p>
             </div>
+        </div>
+
+        <div class="pricing-cta">
+            <a href="tel:+37251915027" class="cta-fill">Helista +372 5191 5027</a>
+            <a href="index.html#kontakt" class="cta-line">Telli korstnapühkimine</a>
         </div>
     </main>
 

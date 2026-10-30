@@ -15,8 +15,11 @@
     <meta property="og:image" content="https://koldesell.ee/logo.png">
     <meta property="og:image:alt" content="Koldesell logo">
     <meta name="twitter:card" content="summary">
-	<link rel="icon" type="image/png" href="logo.png">
-    <link rel="apple-touch-icon" href="logo.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#1e1e1e">
+    <link rel="preconnect" href="https://api.github.com">
+    <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
     <style>
         :root { --primary: #d9531e; --dark: #1e1e1e; --light: #f8f9fa; --text: #2c3e50; }
         body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; margin: 0; color: var(--text); background: var(--light); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
@@ -33,10 +36,11 @@
         
         .nav-links { display: flex; gap: 20px; align-items: center; }
         .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; font-size: 1.05rem; transition: color 0.2s; }
-        .nav-links a:hover { color: var(--primary); }
-        .nav-links a.active { color: var(--primary); }
+        .nav-links a:hover { color: #b8410f; }
+        .nav-links a.active { color: #b8410f; }
 
 		@media (max-width: 768px) {
+            .section-title { font-size: 1.6rem; padding-top: 28px; margin-bottom: 28px; }
             .hero h1 { font-size: 1.8rem; }
             .top-bar .container { flex-direction: column; gap: 5px; text-align: center; }
             .cert-badge { flex-direction: column; text-align: center; }
@@ -49,7 +53,7 @@
         }
 
         /* Galerii Kaardid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .grid { min-height: 340px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 60px; }
         .gallery-card { background: #fff; border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         .gallery-card img { width: 100%; height: 250px; object-fit: contain; display: block; background: #f8f9fa; }
         .gallery-card-body { padding: 18px; }
@@ -163,7 +167,7 @@
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="logo.png" alt="Koldesell Logo">
+                <img src="logo-96.png" alt="Koldesell logo" width="47" height="48">
                 <span>KOLDESELL</span>
             </a>
             
@@ -177,7 +181,7 @@
     </header>
 
     <main class="container">
-        <h1 class="section-title">Tehtud tööd: ahju remont ja pottsepatööd Lõuna-Eestis</h1>
+        <h1 class="section-title">Tehtud tööd: ahju remont ja pottsepatööd Lõuna&#8209;Eestis</h1>
         <div id="gallery" class="grid">
             <p style="text-align: center; width: 100%;">Laen tehtud töid...</p>
         </div>
@@ -249,43 +253,40 @@
                     return;
                 }
 
-                const files = await response.json();
+                const files = (await response.json()).filter(file => file.name.endsWith('.md'));
+                // Laadi kõik kirjed korraga, mitte ükshaaval järjest
+                const contents = await Promise.all(files.map(file => fetch(file.download_url).then(res => res.text())));
                 galleryContainer.innerHTML = '';
 
                 let count = 0;
 
-                for (const file of files) {
-                    if (file.name.endsWith('.md')) {
-                        const fileRes = await fetch(file.download_url);
-                        const content = await fileRes.text();
+                for (const content of contents) {
+                    const titleMatch = content.match(/title:\s*"?([^"\r\n]+)"?/);
+                    const imageMatch = content.match(/image:\s*"?([^"\r\n]+)"?/);
+                    const descMatch = content.match(/description:\s*"?([^"\r\n]+)"?/);
 
-                        const titleMatch = content.match(/title:\s*"?([^"\r\n]+)"?/);
-                        const imageMatch = content.match(/image:\s*"?([^"\r\n]+)"?/);
-                        const descMatch = content.match(/description:\s*"?([^"\r\n]+)"?/);
+                    const title = titleMatch ? titleMatch[1] : 'Tehtud töö';
+                    let image = imageMatch ? imageMatch[1] : '';
+                    const description = descMatch ? descMatch[1] : '';
 
-                        const title = titleMatch ? titleMatch[1] : 'Tehtud töö';
-                        let image = imageMatch ? imageMatch[1] : '';
-                        const description = descMatch ? descMatch[1] : '';
+                    if (image.startsWith('/')) {
+                        image = image.substring(1);
+                    }
 
-                        if (image.startsWith('/')) {
-                            image = image.substring(1);
-                        }
-
-                        if (image) {
-                            count++;
-                            const imageUrl = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/${branch}/${image}`;
-                            
-                            const card = document.createElement('div');
-                            card.className = 'gallery-card';
-                            card.innerHTML = `
-                                <img src="${imageUrl}" alt="${title}" loading="lazy">
-                                <div class="gallery-card-body">
-                                    <h2>${title}</h2>
-                                    ${description ? `<p>${description}</p>` : ''}
-                                </div>
-                            `;
-                            galleryContainer.appendChild(card);
-                        }
+                    if (image) {
+                        count++;
+                        const imageUrl = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/${branch}/${image}`;
+                        
+                        const card = document.createElement('div');
+                        card.className = 'gallery-card';
+                        card.innerHTML = `
+                            <img src="${imageUrl}" alt="${title}" width="600" height="250" loading="${count <= 2 ? 'eager' : 'lazy'}" decoding="async">
+                            <div class="gallery-card-body">
+                                <h2>${title}</h2>
+                                ${description ? `<p>${description}</p>` : ''}
+                            </div>
+                        `;
+                        galleryContainer.appendChild(card);
                     }
                 }
 
