@@ -1,0 +1,27 @@
+{
+  "nimi": "Koldesell",
+  "arinimi": "Koldesell OÜ",
+  "registrikood": "17556546",
+  "telefon": "+372 5191 5027",
+  "email": "info@koldesell.ee",
+  "veebileht": "https://koldesell.ee",
+  "linn": "Võru",
+  "maakond": "Võru maakond",
+  "piirkond": "Võrumaa, Tartumaa ja Lõuna-Eesti",
+  "piirkond_lyhike": "Lõuna-Eesti",
+  "kirjeldus": "Korstnapühkija Võrus: korstnapühkimine Lõuna-Eestis, väiksemad ahju remonditööd ja küttesüsteemide kontroll Võrumaal ja Tartumaal. Ametlik akt Päästeametile.",
+  "baashind": "70",
+  "kutse_korstnapuhkija": "231956",
+  "kutse_pottsepp": "230140",
+  "teeninduspiirkonnad": [
+    { "nimi": "Võrumaa", "tyyp": "AdministrativeArea" },
+    { "nimi": "Tartumaa", "tyyp": "AdministrativeArea" },
+    { "nimi": "Lõuna-Eesti", "tyyp": "Place" },
+    { "nimi": "Võru", "tyyp": "City" },
+    { "nimi": "Tartu", "tyyp": "City" },
+    { "nimi": "Põlva", "tyyp": "City" },
+    { "nimi": "Valga", "tyyp": "City" },
+    { "nimi": "Elva", "tyyp": "City" },
+    { "nimi": "Otepää", "tyyp": "City" }
+  ]
+}
