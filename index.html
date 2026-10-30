@@ -3,171 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Korstnapühkija ja küttesüsteemide remont | Koldesell</title>
-	<link rel="icon" type="image/png" href="logo.png">
-    <link rel="apple-touch-icon" href="logo.png">
-    <meta name="description" content="Ametlik korstnapühkija Lõuna-Eestis ja Tartus. Ahjude, pliitide ja kaminate puhastus, pisiremont ning küttesüsteemide kontroll. Kehtiv akt Päästeametile.">
-    <meta name="keywords" content="korstnapühkija, korstnapühkija tartus, korstnapühkija lõuna-eestis, ahju remont, pottsepatööd, korstna puhastamine, koldesell">
-    <meta property="og:title" content="Ametlik korstnapühkimine ja küttesüsteemide remont - Koldesell">
-    <meta property="og:description" content="Professionaalne korstnapühkija Lõuna-Eestis. Tellige teenus ja saage ametlik akt.">
+    <!-- cms:seo -->
+    <title>Korstnapühkija Võrus ja Lõuna-Eestis, ahju remont | Koldesell</title>
+    <meta name="description" content="Korstnapühkija Võrus: korstnapühkimine Lõuna-Eestis, ahju remont ja küttesüsteemide kontroll Võrumaal ja Tartumaal. Ametlik akt Päästeametile.">
+    <link rel="canonical" href="https://koldesell.ee/">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="et_EE">
+    <meta property="og:site_name" content="Koldesell">
+    <meta property="og:title" content="Korstnapühkija Võrus – korstnapühkimine Lõuna-Eestis ja ahju remont">
+    <meta property="og:description" content="Ametlik korstnapühkimine ja ahju remont Võrumaal, Tartumaal ja mujal Lõuna-Eestis. Kehtiv akt Päästeametile.">
     <meta property="og:url" content="https://koldesell.ee/">
-    <style>
-        :root {
-            --primary: #d9531e;
-            --dark: #1e1e1e;
-            --light: #f8f9fa;
-            --text: #2c3e50;
-        }
-        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; margin: 0; color: var(--text); background: #fff; line-height: 1.6; }
-        
-        /* Top Bar */
-        .top-bar { background: var(--dark); color: #ccc; padding: 8px 0; font-size: 0.9rem; border-bottom: 1px solid #333; }
-        .top-bar .container { display: flex; justify-content: space-between; align-items: center; }
-        .top-bar a { color: #fff; text-decoration: none; font-weight: bold; }
-
-		/* Päis ja Navigatsioon */
-        header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 100; }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 6px 20px; max-width: 1100px; margin: 0 auto; flex-wrap: wrap; }
-        
-        /* LOGO ARVUTIS */
-        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--dark); font-size: 1.4rem; font-weight: 700; }
-        .logo img { height: 48px; width: auto; object-fit: contain; }
-        
-        .nav-links { display: flex; gap: 20px; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; font-size: 1.05rem; transition: color 0.2s; }
-        .nav-links a:hover { color: var(--primary); }
-        .nav-links a.active { color: var(--primary); }
-        
-        /* Hero Section */
-        .hero { background: linear-gradient(rgba(30,30,30,0.85), rgba(30,30,30,0.85)), #2c3e50; color: #fff; padding: 80px 20px; text-align: center; }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
-        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px auto; color: #ddd; }
-        .btn-primary { background: var(--primary); color: #fff; padding: 12px 28px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; transition: 0.3s; }
-        .btn-primary:hover { background: #b83f12; }
-		.btn-secondary { background: transparent; color: #fff; padding: 12px 28px; text-decoration: none; border-radius: 5px; font-weight: bold; border: 2px solid var(--primary); display: inline-block; transition: 0.3s; }
-        .btn-secondary:hover { background: var(--primary); }
-
-        /* General Layout */
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-        .section { padding: 60px 0; }
-        .section-title { text-align: center; margin-bottom: 40px; font-size: 2rem; color: var(--dark); }
-
-		/* Teenuste sektsiooni uus disain */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 40px; }
-        
-        .service-card { background: #fff; border: 1px solid #eaeaea; border-radius: 8px; padding: 40px 30px; text-align: center; transition: all 0.3s ease; }
-        .service-card:hover { border-color: var(--primary); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(217, 83, 30, 0.08); }
-        
-        .service-icon { width: 64px; height: 64px; margin: 0 auto 20px auto; background: #fff4f0; color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-        .service-card h3 { color: var(--dark); font-size: 1.3rem; margin-bottom: 15px; }
-        .service-card p { color: #555; font-size: 0.95rem; line-height: 1.6; margin: 0; }
-
-		/* Litsentsi bänneri uus disain */
-        .license-banner { background: var(--dark); border-radius: 8px; padding: 30px; display: flex; align-items: center; gap: 25px; color: #fff; }
-        .license-icon { color: var(--primary); flex-shrink: 0; }
-        .license-text h4 { margin: 0 0 8px 0; font-size: 1.2rem; color: #fff; }
-        .license-text p { margin: 0; color: #bbb; font-size: 0.95rem; line-height: 1.5; }
-
-        /* Kontaktivormi stiilid */
-        .contact-wrapper { max-width: 600px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #eee; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark); font-size: 0.95rem; }
-        .form-group input, .form-group textarea { width: 100%; padding: 12px 15px; border: 1px solid #ccc; border-radius: 5px; font-family: inherit; font-size: 1rem; box-sizing: border-box; transition: 0.3s; background: #fdfdfd; }
-        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(217, 83, 30, 0.15); background: #fff; }
-        .form-group textarea { resize: vertical; }
-        
-        /* Footer */
-        footer { background: var(--dark); color: #aaa; padding: 40px 0 20px 0; font-size: 0.95rem; }
-        footer h4 { color: #fff; margin-bottom: 15px; }
-        footer a { color: #ccc; text-decoration: none; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-bottom: 30px; }
-        .footer-bottom { border-top: 1px solid #333; padding-top: 20px; text-align: center; font-size: 0.85rem; }
-
-		@media (max-width: 768px) {
-            .hero h1 { font-size: 1.8rem; }
-            .top-bar .container { flex-direction: column; gap: 5px; text-align: center; }
-            .cert-badge { flex-direction: column; text-align: center; }
-            
-            /* LOGO MOBIILIS */
-            .logo { font-size: 1.25rem; gap: 10px; }
-            .logo img { height: 46px; }
-            .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; font-size: 0.95rem; border-top: 1px solid #eee; padding-top: 8px; width: 100%; }
-            .nav-container { flex-direction: column; gap: 8px; padding: 8px 15px; }
-			
-			.license-banner { flex-direction: column; text-align: center; gap: 15px; padding: 25px 20px; }
-        }
-         
-    </style>
+    <meta property="og:image" content="https://koldesell.ee/logo.png">
+    <meta property="og:image:alt" content="Koldesell">
+    <meta name="twitter:card" content="summary">
+    <!-- /cms:seo -->
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#1e1e1e">
+    <link rel="stylesheet" href="css/stiil.css">
 	
-	<!-- Google SEO JSON-LD -->
-	    <script type="application/ld+json">
-	    {
-	      "@context": "https://schema.org",
-	      "@type": "LocalBusiness",
-	      "name": "Koldesell",
-	      "image": "https://koldesell.ee/logo.png",
-	      "description": "Professionaalne korstnapühkija ja pottsepp Lõuna-Eestis. Ahjude remont, küttesüsteemide kontroll ja ametlik akt Päästeametile.",
-	      "url": "https://koldesell.ee",
-	      "telephone": "+37251915027",
-	      "areaServed": [
-	        {
-	          "@type": "GeoCircle",
-	          "geoMidpoint": {
-	            "@type": "GeoCoordinates",
-	            "latitude": 57.8462,
-	            "longitude": 27.0019
-	          },
-	          "geoRadius": 50000
-	        },
-	        {
-	          "@type": "City",
-	          "name": "Võru"
-	        },
-	        {
-	          "@type": "City",
-	          "name": "Tartu"
-	        },
-	        {
-	          "@type": "City",
-	          "name": "Põlva"
-	        },
-	        {
-	          "@type": "City",
-	          "name": "Valga"
-	        },
-	        {
-	          "@type": "City",
-	          "name": "Elva"
-	        },
-	        {
-	          "@type": "City",
-	          "name": "Otepää"
-	        }
-	      ]
-	    }
-	    </script>
+    <!-- cms:jsonld -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": [
+        "LocalBusiness",
+        "HomeAndConstructionBusiness"
+      ],
+      "additionalType": "http://www.productontology.org/id/Chimney_sweep",
+      "@id": "https://koldesell.ee/#business",
+      "name": "Koldesell",
+      "legalName": "Koldesell OÜ",
+      "url": "https://koldesell.ee/",
+      "logo": "https://koldesell.ee/logo.png",
+      "image": "https://koldesell.ee/logo.png",
+      "description": "Korstnapühkija Võrus: korstnapühkimine Lõuna-Eestis, väiksemad ahju remonditööd ja küttesüsteemide kontroll Võrumaal ja Tartumaal. Ametlik akt Päästeametile.",
+      "telephone": "+37251915027",
+      "email": "info@koldesell.ee",
+      "priceRange": "€€",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "Äriregistri kood",
+        "value": "17556546"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Võru",
+        "addressRegion": "Võru maakond",
+        "addressCountry": "EE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 57.8462,
+        "longitude": 27.0019
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+37251915027",
+        "email": "info@koldesell.ee",
+        "areaServed": "EE",
+        "availableLanguage": [
+          "et"
+        ]
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Võrumaa"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Tartumaa"
+        },
+        {
+          "@type": "Place",
+          "name": "Lõuna-Eesti"
+        },
+        {
+          "@type": "City",
+          "name": "Võru"
+        },
+        {
+          "@type": "City",
+          "name": "Tartu"
+        },
+        {
+          "@type": "City",
+          "name": "Põlva"
+        },
+        {
+          "@type": "City",
+          "name": "Valga"
+        },
+        {
+          "@type": "City",
+          "name": "Elva"
+        },
+        {
+          "@type": "City",
+          "name": "Otepää"
+        }
+      ],
+      "knowsAbout": [
+        "korstnapühkimine",
+        "ahju remont",
+        "pottsepatööd",
+        "küttesüsteemide kontroll"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Koldesell – teenused",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Korstnapühkimine",
+              "description": "Korstnate, ahjude, pliitide ja kaminate puhastamine koos ametliku aktiga Päästeametile ja Küttesüsteemide portaali.",
+              "serviceType": "Korstnapühkimine",
+              "areaServed": "Lõuna-Eesti"
+            },
+            "price": "70",
+            "priceCurrency": "EUR"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Väiksemad ahju remonditööd",
+              "description": "Ahjude ja pliitide pisiremont: kividetailide vahetus, uste ja siibrite paigaldus, vuukimine.",
+              "serviceType": "Ahju remont",
+              "areaServed": "Lõuna-Eesti"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Küttesüsteemide kontroll",
+              "serviceType": "Küttesüsteemide kontroll",
+              "areaServed": "Lõuna-Eesti"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+    <!-- /cms:jsonld -->
 	
 </head>
 <body>
 
     <!-- Ülemine inforiba -->
-    <div class="top-bar" style="background: var(--dark); color: #ccc; padding: 10px 0; font-size: 0.9rem;">
-        <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; max-width: 1100px; margin: 0 auto; padding: 0 20px;">
-            <div style="display: flex; align-items: center; gap: 8px;">
-                <!-- Asukoha ikoon -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                    <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-                Teeninduspiirkond: Lõuna-Eesti
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary-on-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span class="hide-mobile">Teeninduspiirkond: <span data-cms="piirkond">Võrumaa, Tartumaa ja Lõuna-Eesti</span></span>
+                <span class="show-mobile" data-cms="piirkond_lyhike">Lõuna-Eesti</span>
             </div>
-            <div style="display: flex; align-items: center; gap: 8px;">
-                <!-- Telefoni ikoon -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                </svg>
-                Helista: <a href="tel:+37251915027" style="color: #fff; text-decoration: none; font-weight: bold;">+372 5191 5027</a>
+            <div class="top-bar-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary-on-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <span class="hide-mobile">Helista:</span> <a href="tel:+37251915027" data-cms-link="telefon"><span data-cms="telefon">+372 5191 5027</span></a>
             </div>
         </div>
     </div>
@@ -176,109 +174,135 @@
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="logo.png" alt="Koldesell Logo">
+                <img src="logo-96.png" alt="Koldesell logo" width="47" height="48">
                 <span>KOLDESELL</span>
             </a>
-            
-            <nav class="nav-links">
-                <a href="index.html" class="active">Avaleht</a>
-                <a href="hinnakiri.html">Hinnakiri</a>
-                <a href="galerii.html">Galerii</a>
-                <a href="index.html#kontakt">Kontakt</a>
-            </nav>
+
+            <div class="nav-right">
+                <nav class="nav-links" aria-label="Peamenüü">
+                    <a href="index.html" class="active" aria-current="page">Avaleht</a>
+                    <a href="hinnakiri.html">Hinnakiri</a>
+                    <a href="galerii.html">Galerii</a>
+                    <a href="#kontakt">Kontakt</a>
+                </nav>
+                <div class="nav-cta">
+                    <a href="tel:+37251915027" data-cms-link="telefon" class="nav-phone" aria-label="Helista"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></a>
+                    <a href="#kontakt" class="btn btn-primary btn-sm">Telli korstnapühkimine</a>
+                </div>
+            </div>
         </div>
     </header>
 
+    <main>
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <h1>Ametlik korstnapühkimine & küttesüsteemide remont</h1>
-            <p>Puhas kütteseade tagab turvalisuse ja soojapidavuse.<br>
-			Väljastame kehtiva akti Päästeametile ja Küttesüsteemide portaali.</p>
-            <div class="hero-buttons" style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                
-                <a href="tel:+37251915027" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
-                    <!-- Telefoni SVG ikoon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                    </svg>
-                    Helista
+            <span class="hero-badge"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary-on-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg> Kutsetunnistusega korstnapühkija<span class="hide-sm"> · Võru ja Lõuna-Eesti</span></span>
+            <h1>Ametlik <span class="accent">korstnapühkimine</span> &amp; küttesüsteemide remont</h1>
+            <p class="hero-lead">Puhas kütteseade tagab turvalisuse ja soojapidavuse. Väljastame kehtiva akti Päästeametile ja Küttesüsteemide portaali.</p>
+            <div class="hero-buttons">
+                <a href="#kontakt" class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    Telli korstnapühkimine
                 </a>
-                
-                <a href="#kontakt" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 8px;">
-                    <!-- Ümbriku SVG ikoon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    Kirjuta meile
+                <a href="tel:+37251915027" data-cms-link="telefon" class="btn btn-outline">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    Helista <span data-cms="telefon">+372 5191 5027</span>
                 </a>
-                
             </div>
+            <ul class="hero-facts">
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> Ametlik akt Päästeametile</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> Võrus ja lähiümbruses transport hinnas</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> Võrumaa, Tartumaa, Lõuna-Eesti</li>
+            </ul>
         </div>
     </section>
 
     <!-- Teenused -->
-    <section class="section container">
-        <h2 class="section-title">Meie teenused</h2>
-        <div class="services-grid">
-            <!-- Kaart 1 -->
-            <div class="service-card">
-                <div class="service-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
-                    </svg>
-                </div>
-                <h3>Korstnapühkimine</h3>
+    <section class="section" id="teenused">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">Teenused</span>
+                <h2 class="section-title">Meie teenused</h2>
+                <p class="section-lead">Korstnapühkimine ja ahjude pisiremont ühe meistri käest – kõik tööd tehakse vastavalt tuleohutuse seadusele.</p>
             </div>
 
-            <!-- Kaart 2 -->
-            <div class="service-card">
-                <div class="service-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-                    </svg>
-                </div>
-                <h3>Pisiremont & hooldus</h3>
+            <div class="services-grid">
+                <article class="service-card">
+                    <span class="service-tag">Populaarseim</span>
+                    <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg></div>
+                    <h3>Korstnapühkimine</h3>
+                    <p>Korstnate, ahjude, pliitide, kaminate ja saunakerise puhastus koos ametliku aktiga.</p>
+                    <ul class="check-list">
+                    <li><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Korstna ja lõõride puhastus</span></li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Kütteseadme tehnilise seisukorra kontroll</span></li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Akt Päästeametile ja Küttesüsteemide portaali</span></li>
+                    </ul>
+                    <div class="service-footer">
+                        <span class="service-price">alates <strong><span data-cms="baashind">70</span> €</strong></span>
+                        <a href="#kontakt" class="service-link">Telli korstnapühkimine <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                    </div>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></div>
+                    <h3>Ahju remont ja hooldus</h3>
+                    <p>Väiksemad ahju- ja pliiditööd, mis hoiavad küttekolde ohutu ja töökorras.</p>
+                    <ul class="check-list">
+                    <li><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Kividetailide vahetus</span></li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Uste ja siibrite paigaldus</span></li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Vuukimine ja pisiparandused</span></li>
+                    </ul>
+                    <div class="service-footer">
+                        <span class="service-price">hind <strong>kokkuleppel</strong></span>
+                        <a href="#kontakt" class="service-link">Küsi pakkumist <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                    </div>
+                </article>
             </div>
 
-            <!-- Kaart 3 -->
-            <div class="service-card">
-                <div class="service-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                        <polyline points="14 2 14 8 20 8"></polyline>
-                        <line x1="16" y1="13" x2="8" y2="13"></line>
-                        <line x1="16" y1="17" x2="8" y2="17"></line>
-                        <polyline points="10 9 9 9 8 9"></polyline>
-                    </svg>
+            <div class="service-extra">
+                <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-strong)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg></div>
+                <div>
+                    <h3>Küttesüsteemide kontroll</h3>
+                    <p>Kütteseadmete ülevaatus ja tehtud tööde registreerimine ametlikus Küttesüsteemide portaalis.</p>
                 </div>
-                <h3>Küttesüsteemide kontroll</h3>
             </div>
-        </div>
 
-        <!-- Litsentsi bänner -->
-        <div class="license-banner">
-            <div class="license-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="8" r="7"></circle>
-                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
-                </svg>
-            </div>
-            <div class="license-text">
-                <h4>Ametlikult litsentseeritud spetsialist</h4>
-                <p>Kõik tööd teostatakse vastavalt tuleohutuse seadusele.<br>
-				Registreerime tehtud tööd ametlikus Küttesüsteemide portaalis.</p>
+            <!-- Litsentsi bänner -->
+            <div class="license-banner">
+                <div class="license-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg></div>
+                <div class="license-text">
+                    <h3>Ametlikult litsentseeritud spetsialist</h3>
+                    <p>Kutsetunnistused: korstnapühkija (tase 3) ja pottsepp-sell (tase 3).<br>
+                    Registreerime tehtud tööd ametlikus Küttesüsteemide portaalis.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Kontakt / Kontaktivorm -->
-    <section id="kontakt" class="section" style="background: var(--light);">
-        <div class="container">
-            <h2 class="section-title">Võta ühendust</h2>
+    <section id="kontakt" class="section contact-section">
+        <div class="container contact-layout">
+            <div class="contact-info">
+                <span class="eyebrow">Kontakt</span>
+                <h2 class="section-title">Võta ühendust</h2>
+                <p class="section-lead">Kirjelda lühidalt oma soovi ja asukohta – vastame esimesel võimalusel. Kiireim on helistada.</p>
+                <ul class="contact-methods">
+                    <li>
+                        <a href="tel:+37251915027" data-cms-link="telefon">
+                            <span class="cm-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                            <span><small>Helista</small><strong><span data-cms="telefon">+372 5191 5027</span></strong></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:info@koldesell.ee" data-cms-link="email">
+                            <span class="cm-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
+                            <span><small>Kirjuta</small><strong><span data-cms="email">info@koldesell.ee</span></strong></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
             <div class="contact-wrapper">
-                
                 <!-- Web3Forms vorm -->
                 <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
                     
@@ -309,7 +333,7 @@
                         <textarea id="message" name="message" rows="5" required placeholder="Kirjelda lühidalt oma soovi ja asukohta..."></textarea>
                     </div>
 
-                    <button type="submit" class="btn-primary" style="width: 100%; font-size: 1.1rem; padding: 15px;">Saada kiri</button>
+                    <button type="submit" class="btn btn-primary">Saada päring</button>
                     
                     <!-- Kliendile näidatav teade peale saatmist -->
                     <input type="hidden" name="redirect" value="https://koldesell.ee/edukas.html">
@@ -317,50 +341,65 @@
             </div>
         </div>
     </section>
-    
-    <!-- Jalus koos rekvisiitidega -->
+
+    <!-- Lõpu CTA -->
+    <section class="cta-band">
+        <div class="container">
+            <div>
+                <h2>Vajad korstnapühkijat Võrumaal või Tartumaal?</h2>
+                <p>Lepi aeg kokku juba täna – ametlik akt Päästeametile kohe tööde järel.</p>
+            </div>
+            <div class="cta-buttons">
+                <a href="tel:+37251915027" data-cms-link="telefon" class="btn btn-white"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> Helista kohe</a>
+                <a href="#kontakt" class="btn btn-outline"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> Võta ühendust</a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+        <!-- Jalus koos rekvisiitidega -->
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <h4>Koldesell OÜ</h4>
+                    <h2>Koldesell OÜ</h2>
                     <p>Professionaalne korstnapühkimis- ja küttekehade hooldusteenus.</p>
                 </div>
                 <div>
-                    <h4>Kontaktid</h4>
+                    <h2>Kontaktid</h2>
                     <ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
                         <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
                             <!-- Telefoni ikoon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-on-dark)" aria-hidden="true" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                             </svg>
-                            Telefon: <a href="tel:+37251915027" style="color: #aaa; text-decoration: none;">+372 5191 5027</a>
+                            Telefon: <a href="tel:+37251915027" data-cms-link="telefon"><span data-cms="telefon">+372 5191 5027</span></a>
                         </li>
                         <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
                             <!-- Ümbriku ikoon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-on-dark)" aria-hidden="true" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
-                            E-post: <a href="mailto:info@koldesell.ee" style="color: #aaa; text-decoration: none;">info@koldesell.ee</a>
+                            E-post: <a href="mailto:info@koldesell.ee" data-cms-link="email"><span data-cms="email">info@koldesell.ee</span></a>
                         </li>
                         <li style="display: flex; align-items: center; gap: 10px;">
                             <!-- Veebi ikoon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-on-dark)" aria-hidden="true" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="10"></circle>
                                 <line x1="2" y1="12" x2="22" y2="12"></line>
                                 <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
                             </svg>
-                            Veeb: www.koldesell.ee
+                            Veeb: <a href="https://koldesell.ee/">www.koldesell.ee</a>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <h4>Ettevõtte andmed</h4>
-                    <p>Registrikood: <strong>17556546</strong><br>
+                    <h2>Ettevõtte andmed</h2>
+                    <p>Registrikood: <strong data-cms="registrikood">17556546</strong><br>
                     Kutsetunnistused:<br>
-                    • Korstnapühkija (tase 3): <strong>231956</strong><br>
-                    • Pottsepp-sell (tase 3): <strong>230140</strong></p>
+                    • Korstnapühkija (tase 3): <strong data-cms="kutse_korstnapuhkija">231956</strong><br>
+                    • Pottsepp-sell (tase 3): <strong data-cms="kutse_pottsepp">230140</strong></p>
                 </div>
             </div>
             <div class="footer-bottom">

@@ -1,9 +1,17 @@
+# Decap CMS seadistus.
+# "Tehtud tööd" -> content/galerii/*.md (galerii loeb need otse GitHubist).
+# "Seaded" -> content/seaded/*.json; GitHub Action (.github/workflows/cms-uuenda.yml)
+# kirjutab need väärtused skriptiga scripts/cms-uuenda.mjs HTML-failidesse.
+
 backend:
   name: github
   repo: makuz-sell/koldesell
   branch: main
   base_url: https://koldesell-auth.markusgpt02.workers.dev
   auth_endpoint: /auth
+
+site_url: "https://koldesell.ee"
+display_url: "https://koldesell.ee"
 
 media_folder: "pildid"
 public_folder: "/pildid"
@@ -19,3 +27,130 @@ collections:
       - {label: "Kuupäev", name: "date", widget: "datetime"}
       - {label: "Pilt", name: "image", widget: "image"}
       - {label: "Kirjeldus", name: "description", widget: "text", required: false}
+
+  - name: "seaded"
+    label: "Seaded"
+    description: "Kontaktandmed ja otsingumootori (SEO) tekstid. Muudatused jõuavad lehele mõne minuti jooksul pärast salvestamist."
+    editor: {preview: false}
+    files:
+      - name: "ettevote"
+        label: "Ettevõtte ja kontaktandmed"
+        file: "content/seaded/ettevote.json"
+        fields:
+          - {label: "Nimi (bränd)", name: "nimi", widget: "string"}
+          - {label: "Ärinimi", name: "arinimi", widget: "string"}
+          - {label: "Registrikood", name: "registrikood", widget: "string", pattern: ['^\d{8}$', 'Registrikood on 8 numbrit']}
+          - label: "Telefon"
+            name: "telefon"
+            widget: "string"
+            hint: "Kujul +372 5191 5027. Helistamislingid luuakse sellest automaatselt."
+            pattern: ['^\+?[\d ]{7,20}$', 'Ainult numbrid, tühikud ja algne +']
+          - {label: "E-post", name: "email", widget: "string", pattern: ['^[^@\s]+@[^@\s]+\.[^@\s]+$', 'Sisesta korrektne e-posti aadress']}
+          - {label: "Veebileht", name: "veebileht", widget: "string", hint: "Täielik aadress, nt https://koldesell.ee"}
+          - {label: "Linn (asukoht)", name: "linn", widget: "string"}
+          - {label: "Maakond", name: "maakond", widget: "string"}
+          - {label: "Teeninduspiirkond (pikk)", name: "piirkond", widget: "string", hint: "Avalehe ülemisel ribal arvutis, nt 'Võrumaa, Tartumaa ja Lõuna-Eesti'"}
+          - {label: "Teeninduspiirkond (lühike)", name: "piirkond_lyhike", widget: "string", hint: "Ülemisel ribal telefonis. Hoia lühike, nt 'Lõuna-Eesti'"}
+          - {label: "Ettevõtte kirjeldus (Google'i struktureeritud andmed)", name: "kirjeldus", widget: "text"}
+          - {label: "Korstnapühkimise baashind (€)", name: "baashind", widget: "string", hint: "Ainult number, nt 70. Kuvatakse avalehel ja hinnakirjas.", pattern: ['^\d+([.,]\d+)?$', 'Ainult number']}
+          - {label: "Kutsetunnistus: korstnapühkija (nr)", name: "kutse_korstnapuhkija", widget: "string"}
+          - {label: "Kutsetunnistus: pottsepp-sell (nr)", name: "kutse_pottsepp", widget: "string"}
+          - label: "Teeninduspiirkonnad (Google'ile)"
+            name: "teeninduspiirkonnad"
+            widget: "list"
+            summary: "{{fields.nimi}}"
+            hint: "Piirkonnad, kus teenust pakutakse. Ei kuvata lehel, aga aitab kohalikus otsingus."
+            fields:
+              - {label: "Nimi", name: "nimi", widget: "string"}
+              - label: "Tüüp"
+                name: "tyyp"
+                widget: "select"
+                default: "City"
+                options:
+                  - {label: "Linn", value: "City"}
+                  - {label: "Maakond", value: "AdministrativeArea"}
+                  - {label: "Muu piirkond", value: "Place"}
+
+      - name: "seo"
+        label: "SEO: lehtede pealkirjad ja kirjeldused"
+        file: "content/seaded/seo.json"
+        fields:
+          - label: "Jagamispilt (Facebook jm)"
+            name: "og_pilt"
+            widget: "image"
+            hint: "Pilt, mis kuvatakse lingi jagamisel. Soovitus 1200×630 px."
+          - label: "Avaleht"
+            name: "avaleht"
+            widget: "object"
+            collapsed: false
+            fields:
+              - label: "Pealkiri (title)"
+                name: "pealkiri"
+                widget: "string"
+                hint: "Näidatakse Google'i otsingutulemuses ja brauseri sakil. Soovitus kuni 60 tähemärki, põhimärksõna alguses."
+                pattern: ['^.{10,70}$', 'Pealkiri peab olema 10–70 tähemärki']
+              - label: "Kirjeldus (meta description)"
+                name: "kirjeldus"
+                widget: "text"
+                hint: "Lühikokkuvõte otsingutulemuses. Soovitus 120–160 tähemärki."
+                pattern: ['^.{50,170}$', 'Kirjeldus peab olema 50–170 tähemärki ja ühel real']
+              - label: "Jagamise pealkiri (Facebook jm)"
+                name: "og_pealkiri"
+                widget: "string"
+                required: false
+                hint: "Kui tühi, kasutatakse lehe pealkirja."
+              - label: "Jagamise kirjeldus (Facebook jm)"
+                name: "og_kirjeldus"
+                widget: "text"
+                required: false
+                hint: "Kui tühi, kasutatakse lehe kirjeldust."
+          - label: "Hinnakiri"
+            name: "hinnakiri"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Pealkiri (title)"
+                name: "pealkiri"
+                widget: "string"
+                hint: "Näidatakse Google'i otsingutulemuses ja brauseri sakil. Soovitus kuni 60 tähemärki, põhimärksõna alguses."
+                pattern: ['^.{10,70}$', 'Pealkiri peab olema 10–70 tähemärki']
+              - label: "Kirjeldus (meta description)"
+                name: "kirjeldus"
+                widget: "text"
+                hint: "Lühikokkuvõte otsingutulemuses. Soovitus 120–160 tähemärki."
+                pattern: ['^.{50,170}$', 'Kirjeldus peab olema 50–170 tähemärki ja ühel real']
+              - label: "Jagamise pealkiri (Facebook jm)"
+                name: "og_pealkiri"
+                widget: "string"
+                required: false
+                hint: "Kui tühi, kasutatakse lehe pealkirja."
+              - label: "Jagamise kirjeldus (Facebook jm)"
+                name: "og_kirjeldus"
+                widget: "text"
+                required: false
+                hint: "Kui tühi, kasutatakse lehe kirjeldust."
+          - label: "Galerii"
+            name: "galerii"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Pealkiri (title)"
+                name: "pealkiri"
+                widget: "string"
+                hint: "Näidatakse Google'i otsingutulemuses ja brauseri sakil. Soovitus kuni 60 tähemärki, põhimärksõna alguses."
+                pattern: ['^.{10,70}$', 'Pealkiri peab olema 10–70 tähemärki']
+              - label: "Kirjeldus (meta description)"
+                name: "kirjeldus"
+                widget: "text"
+                hint: "Lühikokkuvõte otsingutulemuses. Soovitus 120–160 tähemärki."
+                pattern: ['^.{50,170}$', 'Kirjeldus peab olema 50–170 tähemärki ja ühel real']
+              - label: "Jagamise pealkiri (Facebook jm)"
+                name: "og_pealkiri"
+                widget: "string"
+                required: false
+                hint: "Kui tühi, kasutatakse lehe pealkirja."
+              - label: "Jagamise kirjeldus (Facebook jm)"
+                name: "og_kirjeldus"
+                widget: "text"
+                required: false
+                hint: "Kui tühi, kasutatakse lehe kirjeldust."

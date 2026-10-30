@@ -1,0 +1,52 @@
+# Kui Decap CMS-is muudetakse seadeid (content/seaded/*.json), kirjutab see töövoog
+# uued väärtused HTML-failidesse ja teeb sellest eraldi commiti.
+name: CMS seaded -> HTML
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/seaded/**"
+      - "scripts/cms-uuenda.mjs"
+      - "*.html"
+  pull_request:
+    paths:
+      - "content/seaded/**"
+      - "scripts/cms-uuenda.mjs"
+      - "*.html"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cms-uuenda-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  uuenda:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Kontrolli (pull request)
+        if: github.event_name == 'pull_request'
+        run: node scripts/cms-uuenda.mjs --check
+
+      - name: Uuenda HTML ja commiti
+        if: github.event_name != 'pull_request'
+        run: |
+          node scripts/cms-uuenda.mjs
+          if git diff --quiet -- '*.html'; then
+            echo "HTML on juba ajakohane."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- '*.html'
+          git commit -m "Uuenda HTML CMS-i seadete põhjal"
+          git push
