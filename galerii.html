@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="et">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- cms:seo -->
     <title>Tehtud tööd: ahju remont ja korstnapühkimine | Koldesell</title>
     <meta name="description" content="Vaata Koldeselli tehtud ahju remonditöid ja pottsepatöid Võrumaal, Tartumaal ja mujal Lõuna-Eestis.">
@@ -17,13 +17,30 @@
     <meta property="og:image:alt" content="Koldesell">
     <meta name="twitter:card" content="summary">
     <!-- /cms:seo -->
-	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <meta name="theme-color" content="#1e1e1e">
-    <link rel="preconnect" href="https://api.github.com">
-    <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
-    <link rel="stylesheet" href="css/stiil.css">
-
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2A2622">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap">
+<style>
+body{margin:0;background:#FEF0E3}
+a{color:#26231F}a:hover{color:#8E3B23}
+a:focus-visible,button:focus-visible{outline:3px solid #D9531E;outline-offset:3px}
+.kl-galerii{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:32px}
+.kl-kaart{margin:0;display:flex;flex-direction:column;background:#FFF8F2;border:1.5px solid #26231F;padding:10px}
+.kl-kaart-pilt{display:block;aspect-ratio:4/5;overflow:hidden;background:#EADFD3}
+.kl-kaart-pilt img{display:block;width:100%;height:100%;object-fit:cover}
+.kl-kaart-sisu{padding:18px 8px 8px}
+.kl-kaart time{font-size:15px;color:#5A554E}
+.kl-kaart h2{margin:4px 0 0;font-family:'Young Serif',Georgia,serif;font-weight:400;font-size:26px;line-height:1.2}
+.kl-kaart p{margin:8px 0 0;font-size:16px;color:#47433D}
+.kl-galerii-teade{grid-column:1/-1;margin:0;padding:48px 24px;text-align:center;border:1.5px dashed #B5A799;color:#47433D}
+@keyframes kl-skelett{from{opacity:.55}to{opacity:1}}
+.kl-skelett{aspect-ratio:4/5;background:#EADFD3;animation:kl-skelett 1s ease-in-out infinite alternate}
+@media (max-width: 640px){.kl-m-kesk{text-align:center}.kl-m-kesk p{margin-left:auto!important;margin-right:auto!important}.kl-m-kesk > div{justify-content:center}.kl-m-pais{justify-content:center!important;text-align:center}}
+@media (prefers-reduced-motion: reduce){.kl-skelett{animation:none}}
+</style>
     <!-- cms:jsonld -->
     <script type="application/ld+json">
     {
@@ -153,209 +170,141 @@
     }
     </script>
     <!-- /cms:jsonld -->
-
 </head>
 <body>
+<div style="background: #FEF0E3; color: #26231F; font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; font-size: 18px; line-height: 1.6">
 
-    <!-- Ülemine inforiba -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="top-bar-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary-on-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                <span class="hide-mobile">Teeninduspiirkond: <span data-cms="piirkond">Võrumaa, Tartumaa ja Lõuna-Eesti</span></span>
-                <span class="show-mobile" data-cms="piirkond_lyhike">Lõuna-Eesti</span>
-            </div>
-            <div class="top-bar-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary-on-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                <span class="hide-mobile">Helista:</span> <a href="tel:+37251915027" data-cms-link="telefon"><span data-cms="telefon">+372 5191 5027</span></a>
-            </div>
-        </div>
-    </div>
+<header>
+<div class="kl-m-pais" style="max-width: 1200px; margin: 0 auto; padding: 22px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 32px">
+<a href="index.html" style="font-family: 'Young Serif', Georgia, serif; font-size: 30px; line-height: 1; text-decoration: none; color: #26231F">Koldesell</a>
+<nav aria-label="Peamenüü" style="display: flex; flex-wrap: wrap; gap: 6px 28px; font-size: 17px">
+<a href="index.html#teenused" style="text-decoration: none">Teenused</a>
+<a href="hinnakiri.html" style="text-decoration: none">Hinnakiri</a>
+<a href="galerii.html" aria-current="page" style="text-decoration: none; font-weight: 700; color: #B8410F">Galerii</a>
+<a href="index.html#kontakt" style="text-decoration: none">Kontakt</a>
+</nav>
+<a href="tel:+37251915027" style="display: inline-flex; align-items: center; gap: 10px; min-height: 46px; padding: 0 20px; border-radius: 3px; background: #B8410F; color: #FFF8F2; text-decoration: none; font-weight: 700; font-size: 17px">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg>
++372 5191 5027</a>
+</div>
+</header>
 
-    <!-- Päis -->
-    <header>
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="logo-96.png" alt="Koldesell logo" width="47" height="48">
-                <span>KOLDESELL</span>
+<section class="kl-m-kesk" style="max-width: 1200px; margin: 0 auto; padding: 48px 24px 64px">
+<h1 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: clamp(48px, 7vw, 92px); line-height: 1">Tehtud tööd</h1>
+<p style="margin: 20px 0 0; max-width: 34em; font-size: 20px; color: #47433D">Valik ahju remonditöödest ja pottsepatöödest Võrumaal, Tartumaal ja mujal Lõuna-Eestis.</p>
+</section>
+
+<div aria-hidden="true" style="border-top: 1.5px solid #26231F; border-bottom: 1.5px solid #26231F; background: #2A2622">
+<svg width="100%" height="34" style="display: block">
+<defs>
+<pattern id="kg-karniis" width="34" height="34" patternUnits="userSpaceOnUse">
+<path d="M17 4 L30 17 L17 30 L4 17 Z" fill="none" stroke="#FEF0E3" stroke-width="1.2" opacity="0.55"></path>
+<circle cx="17" cy="17" r="3.5" fill="#D9531E" stroke="#FEF0E3" stroke-width="1" opacity="0.9"></circle>
+<circle cx="0" cy="0" r="2" fill="#FEF0E3" opacity="0.5"></circle>
+<circle cx="34" cy="34" r="2" fill="#FEF0E3" opacity="0.5"></circle>
+<circle cx="0" cy="34" r="2" fill="#FEF0E3" opacity="0.5"></circle>
+<circle cx="34" cy="0" r="2" fill="#FEF0E3" opacity="0.5"></circle>
+</pattern>
+</defs>
+<rect width="100%" height="34" fill="url(#kg-karniis)"></rect>
+</svg>
+</div>
+
+<section style="max-width: 1200px; margin: 0 auto; padding: 80px 24px 96px">
+<div id="gallery" class="kl-galerii" aria-live="polite" aria-busy="true">
+<div class="kl-skelett"></div>
+<div class="kl-skelett"></div>
+<div class="kl-skelett"></div>
+</div>
+</section>
+
+<section style="background: #2A2622; color: #FEF0E3">
+<div class="kl-m-kesk" style="max-width: 1200px; margin: 0 auto; padding: 80px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px 64px">
+<div style="flex: 1 1 420px; min-width: 0; display: block">
+<h2 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: clamp(34px, 4.4vw, 52px); line-height: 1.1">Soovid oma ahju või pliidi korda teha?</h2>
+<p style="margin: 16px 0 0; max-width: 30em; color: #D9CFC5">Küsi pakkumist. Vaatame koos üle, mida sinu küttekolle vajab.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 14px">
+<a href="tel:+37251915027" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 28px; border-radius: 3px; background: #B8410F; color: #FFF8F2; text-decoration: none; font-weight: 700; font-size: 19px">Helista +372 5191 5027</a>
+<a href="index.html#kontakt" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 28px; border-radius: 3px; border: 1.5px solid #FEF0E3; color: #FEF0E3; text-decoration: none; font-weight: 700; font-size: 19px">Saada päring</a>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="kl-m-pais" style="max-width: 1200px; margin: 0 auto; padding: 26px 24px 40px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 32px; font-size: 15px; color: #5A554E">
+<span>© 2026 Koldesell OÜ</span>
+<span>Korstnapühkimine ja ahjude hooldus Lõuna-Eestis</span>
+</div>
+</footer>
+
+</div>
+<script>
+  // Galerii: kirjed loetakse Decap CMS-i kaustast content/galerii otse GitHubist
+  const REPO = 'makuz-sell/koldesell';
+  const HARU = 'main';
+  const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  function loeFrontMatter(md) {
+    const plokk = md.match(/^---\s*\r?\n([\s\S]*?)\r?\n---/);
+    const andmed = {};
+    if (!plokk) return andmed;
+    const read = plokk[1].split(/\r?\n/);
+    for (let i = 0; i < read.length; i++) {
+      const m = read[i].match(/^(\w+):\s*(.*)$/);
+      if (!m) continue;
+      let vaartus = m[2].trim();
+      if (/^[>|]-?$/.test(vaartus)) {
+        const jatk = [];
+        while (i + 1 < read.length && /^\s+/.test(read[i + 1])) jatk.push(read[++i].trim());
+        vaartus = jatk.join(vaartus.startsWith('>') ? ' ' : '\n');
+      } else if (/^(["']).*\1$/.test(vaartus)) {
+        vaartus = vaartus.slice(1, -1);
+      }
+      andmed[m[1]] = vaartus;
+    }
+    return andmed;
+  }
+  function naitaTeadet(konteiner, tekst) {
+    konteiner.innerHTML = `<p class="kl-galerii-teade">${tekst}</p>`;
+  }
+  async function laeGalerii() {
+    const konteiner = document.getElementById('gallery');
+    try {
+      const vastus = await fetch(`https://api.github.com/repos/${REPO}/contents/content/galerii?ref=${HARU}`);
+      if (!vastus.ok) return naitaTeadet(konteiner, 'Hetkel teostatud töid galeriisse lisatud ei ole.');
+      const failid = (await vastus.json()).filter((fail) => fail.name.endsWith('.md'));
+      const kirjed = (await Promise.all(failid.map((fail) => fetch(fail.download_url).then((r) => r.text()))))
+        .map(loeFrontMatter)
+        .filter((kirje) => kirje.image)
+        .sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
+      if (!kirjed.length) return naitaTeadet(konteiner, 'Hetkel teostatud töid galeriisse lisatud ei ole.');
+      konteiner.innerHTML = kirjed.map((kirje, i) => {
+        const pilt = `https://raw.githubusercontent.com/${REPO}/${HARU}/${kirje.image.replace(/^\/+/, '')}`;
+        const pealkiri = escapeHtml(kirje.title || 'Tehtud töö');
+        const kuupaev = kirje.date ? new Date(kirje.date) : null;
+        const aeg = kuupaev && !isNaN(kuupaev)
+          ? `<time datetime="${escapeHtml(kirje.date)}">${kuupaev.toLocaleDateString('et-EE', { month: 'long', year: 'numeric' })}</time>`
+          : '';
+        return `
+          <article class="kl-kaart">
+            <a class="kl-kaart-pilt" href="${escapeHtml(pilt)}" target="_blank" rel="noopener" aria-label="Ava pilt: ${pealkiri}">
+              <img src="${escapeHtml(pilt)}" alt="${pealkiri}" width="600" height="750" loading="${i < 3 ? 'eager' : 'lazy'}" decoding="async">
             </a>
-
-            <div class="nav-right">
-                <nav class="nav-links" aria-label="Peamenüü">
-                    <a href="index.html">Avaleht</a>
-                    <a href="hinnakiri.html">Hinnakiri</a>
-                    <a href="galerii.html" class="active" aria-current="page">Galerii</a>
-                    <a href="index.html#kontakt">Kontakt</a>
-                </nav>
-                <div class="nav-cta">
-                    <a href="tel:+37251915027" data-cms-link="telefon" class="nav-phone" aria-label="Helista"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></a>
-                    <a href="index.html#kontakt" class="btn btn-primary btn-sm">Telli korstnapühkimine</a>
-                </div>
+            <div class="kl-kaart-sisu">
+              ${aeg}
+              <h2>${pealkiri}</h2>
+              ${kirje.description ? `<p>${escapeHtml(kirje.description)}</p>` : ''}
             </div>
-        </div>
-    </header>
-
-    <main>
-    <section class="page-head">
-        <div class="container">
-            <span class="eyebrow">Galerii</span>
-            <h1>Tehtud tööd: ahju remont ja pottsepatööd Lõuna&#8209;Eestis</h1>
-            <p>Valik tehtud töödest Võrumaal, Tartumaal ja mujal Lõuna-Eestis.</p>
-        </div>
-    </section>
-
-    <section class="page-section">
-        <div class="container">
-            <div id="gallery" class="gallery-grid" aria-live="polite" aria-busy="true">
-                <div class="gallery-skeleton"></div>
-                <div class="gallery-skeleton"></div>
-                <div class="gallery-skeleton"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Lõpu CTA -->
-    <section class="cta-band">
-        <div class="container">
-            <div>
-                <h2>Soovid oma ahju või pliidi korda teha?</h2>
-                <p>Küsi pakkumist – vaatame koos üle, mida sinu küttekolle vajab.</p>
-            </div>
-            <div class="cta-buttons">
-                <a href="tel:+37251915027" data-cms-link="telefon" class="btn btn-white"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> Helista kohe</a>
-                <a href="index.html#kontakt" class="btn btn-outline"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> Võta ühendust</a>
-            </div>
-        </div>
-    </section>
-    </main>
-
-    <!-- Jalus koos rekvisiitidega -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <h2>Koldesell OÜ</h2>
-                    <p>Professionaalne korstnapühkimis- ja küttekehade hooldusteenus.</p>
-                </div>
-                <div>
-                    <h2>Kontaktid</h2>
-                    <ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
-                        <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
-                            <!-- Telefoni ikoon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-on-dark)" aria-hidden="true" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
-                            Telefon: <a href="tel:+37251915027" data-cms-link="telefon"><span data-cms="telefon">+372 5191 5027</span></a>
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
-                            <!-- Ümbriku ikoon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-on-dark)" aria-hidden="true" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                            E-post: <a href="mailto:info@koldesell.ee" data-cms-link="email"><span data-cms="email">info@koldesell.ee</span></a>
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 10px;">
-                            <!-- Veebi ikoon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-on-dark)" aria-hidden="true" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="2" y1="12" x2="22" y2="12"></line>
-                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                            </svg>
-                            Veeb: <a href="https://koldesell.ee/">www.koldesell.ee</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h2>Ettevõtte andmed</h2>
-                    <p>Registrikood: <strong data-cms="registrikood">17556546</strong><br>
-                    Kutsetunnistused:<br>
-                    • Korstnapühkija (tase 3): <strong data-cms="kutse_korstnapuhkija">231956</strong><br>
-                    • Pottsepp-sell (tase 3): <strong data-cms="kutse_pottsepp">230140</strong></p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Koldesell OÜ. Kõik õigused kaitstud.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Galerii: kirjed loetakse Decap CMS-i kaustast content/galerii otse GitHubist -->
-    <script>
-        const REPO = 'makuz-sell/koldesell';
-        const HARU = 'main';
-
-        const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-
-        // Loeb Markdowni päise (front matter) väljad, sh mitmerealised (">-" ja "|") väärtused
-        function loeFrontMatter(md) {
-            const plokk = md.match(/^---\s*\r?\n([\s\S]*?)\r?\n---/);
-            const andmed = {};
-            if (!plokk) return andmed;
-            const read = plokk[1].split(/\r?\n/);
-            for (let i = 0; i < read.length; i++) {
-                const m = read[i].match(/^(\w+):\s*(.*)$/);
-                if (!m) continue;
-                let vaartus = m[2].trim();
-                if (/^[>|]-?$/.test(vaartus)) {
-                    const jatk = [];
-                    while (i + 1 < read.length && /^\s+/.test(read[i + 1])) jatk.push(read[++i].trim());
-                    vaartus = jatk.join(vaartus.startsWith('>') ? ' ' : '\n');
-                } else if (/^(["']).*\1$/.test(vaartus)) {
-                    vaartus = vaartus.slice(1, -1);
-                }
-                andmed[m[1]] = vaartus;
-            }
-            return andmed;
-        }
-
-        function naitaTeadet(konteiner, tekst) {
-            konteiner.innerHTML = `<p class="gallery-empty">${tekst}</p>`;
-        }
-
-        async function laeGalerii() {
-            const konteiner = document.getElementById('gallery');
-            try {
-                const vastus = await fetch(`https://api.github.com/repos/${REPO}/contents/content/galerii?ref=${HARU}`);
-                if (!vastus.ok) return naitaTeadet(konteiner, 'Hetkel teostatud töid galeriisse lisatud ei ole.');
-
-                const failid = (await vastus.json()).filter((fail) => fail.name.endsWith('.md'));
-                // Kõik kirjed laaditakse korraga, mitte ükshaaval järjest
-                const kirjed = (await Promise.all(failid.map((fail) => fetch(fail.download_url).then((r) => r.text()))))
-                    .map(loeFrontMatter)
-                    .filter((kirje) => kirje.image)
-                    .sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
-
-                if (!kirjed.length) return naitaTeadet(konteiner, 'Hetkel teostatud töid galeriisse lisatud ei ole.');
-
-                konteiner.innerHTML = kirjed.map((kirje, i) => {
-                    const pilt = `https://raw.githubusercontent.com/${REPO}/${HARU}/${kirje.image.replace(/^\/+/, '')}`;
-                    const pealkiri = escapeHtml(kirje.title || 'Tehtud töö');
-                    const kuupaev = kirje.date ? new Date(kirje.date) : null;
-                    const aeg = kuupaev && !isNaN(kuupaev)
-                        ? `<time datetime="${escapeHtml(kirje.date)}">${kuupaev.toLocaleDateString('et-EE', { month: 'long', year: 'numeric' })}</time>`
-                        : '';
-                    return `
-                        <article class="gallery-card">
-                            <a class="gallery-img" href="${escapeHtml(pilt)}" target="_blank" rel="noopener" aria-label="Ava pilt: ${pealkiri}">
-                                <img src="${escapeHtml(pilt)}" alt="${pealkiri}" width="600" height="750" loading="${i < 3 ? 'eager' : 'lazy'}" decoding="async">
-                            </a>
-                            <div class="gallery-card-body">
-                                ${aeg}
-                                <h2>${pealkiri}</h2>
-                                ${kirje.description ? `<p>${escapeHtml(kirje.description)}</p>` : ''}
-                            </div>
-                        </article>`;
-                }).join('');
-            } catch (viga) {
-                console.error('Galerii laadimise viga:', viga);
-                naitaTeadet(konteiner, 'Töid ei õnnestunud laadida. Proovi hiljem uuesti.');
-            } finally {
-                konteiner.setAttribute('aria-busy', 'false');
-            }
-        }
-
-        laeGalerii();
-    </script>
+          </article>`;
+      }).join('');
+    } catch (viga) {
+      console.error('Galerii laadimise viga:', viga);
+      naitaTeadet(konteiner, 'Töid ei õnnestunud laadida. Proovi hiljem uuesti.');
+    } finally {
+      konteiner.setAttribute('aria-busy', 'false');
+    }
+  }
+  laeGalerii();
+</script>
 </body>
 </html>
