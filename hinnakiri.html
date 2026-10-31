@@ -27,6 +27,8 @@
 body{margin:0;background:#FEF0E3}
 a{color:#26231F}a:hover{color:#8E3B23}
 a:focus-visible,button:focus-visible{outline:3px solid #D9531E;outline-offset:3px}
+/* Kui veerud on kõrvuti, algab hinnarida pealkirja kõrguselt (ikoon 150px + 12px vahe) */
+@media (min-width: 932px){.kl-joonda{margin-top:162px}}
 @media (max-width: 640px){.kl-m-pais > nav{justify-content:center;gap:6px 20px!important}.kl-m-kesk{text-align:center}.kl-m-kesk p{margin-left:auto!important;margin-right:auto!important}.kl-m-kesk > div{justify-content:center}.kl-m-pais{justify-content:center!important;text-align:center}.kl-m-peida{display:none!important}.kl-hind{font-size:22px!important}.kl-hind span{font-size:14px!important}}
 </style>
     <!-- cms:jsonld -->
@@ -257,7 +259,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #D9531E;outline-offset:3p
 <h2 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: clamp(34px, 4vw, 46px); line-height: 1.1">Ahju remont ja pottsepatööd</h2>
 <p style="margin: 14px 0 0; max-width: 24em; color: #47433D">Väiksemad remonditööd ahjudele, pliitidele ja kaminatele.</p>
 </div>
-<div style="flex: 2 1 520px; min-width: 0">
+<div class="kl-joonda" style="flex: 2 1 520px; min-width: 0">
 <div style="padding: 20px 0; border-top: 1.5px solid #26231F; border-bottom: 1.5px solid #26231F">
 <div style="display: flex; align-items: baseline; gap: 14px">
 <h3 style="flex: 0 1 auto; min-width: 0; margin: 0; font-size: 20px">Pottsepatööd ja pisiremont</h3>
