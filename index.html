@@ -31,7 +31,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .koldesell-kuma{animation:koldesell-kuma 2.6s ease-in-out infinite alternate}
 @keyframes koldesell-pahv{0%{transform:translate(0,0) scale(.35);opacity:0}10%{opacity:.8}45%{transform:translate(70px,-200px) scale(1.6);opacity:.55}100%{transform:translate(400px,-380px) scale(3.2);opacity:0}}
 .koldesell-pahv{transform-box:fill-box;transform-origin:center;opacity:0;will-change:transform,opacity;animation:koldesell-pahv 6.6s cubic-bezier(.25,.6,.45,1) infinite}
-@media (max-width: 640px){.kl-m-pais > nav{justify-content:center;gap:6px 20px!important}.kl-m-kesk{text-align:center}.kl-m-kesk p{margin-left:auto!important;margin-right:auto!important}.kl-m-kesk > div{justify-content:center}.kl-m-pais{justify-content:center!important;text-align:center}.kl-m-teenus{justify-content:center}.kl-m-teenus > div:last-child{flex-basis:100%!important;align-items:center!important}}
+@media (max-width: 400px){.kl-m-teenus h3{font-size:28px!important}}
+@media (max-width: 640px){.kl-m-pais > nav{justify-content:center;gap:6px 20px!important}.kl-tunnistused{grid-template-columns:1fr!important}.kl-tunnistused > div{border-right:0!important;border-bottom:1px solid #6B5F55!important}.kl-tunnistused > div:last-child{border-bottom:0!important}.kl-m-kesk{text-align:center}.kl-m-kesk p{margin-left:auto!important;margin-right:auto!important}.kl-m-kesk > div{justify-content:center}.kl-m-pais{justify-content:center!important;text-align:center}.kl-m-teenus{justify-content:center}.kl-m-teenus > div:last-child{flex-basis:100%!important;align-items:center!important}}
 @media (prefers-reduced-motion: reduce){.koldesell-kuma{animation:none;opacity:.6}.koldesell-sadem{display:none}.koldesell-pahv{animation:none;opacity:.35}}
 </style>
     <!-- cms:jsonld -->
@@ -371,9 +372,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 <h2 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: clamp(36px, 4.4vw, 52px); line-height: 1.1">Meister ja tunnistused</h2>
 <p style="margin: 18px 0 0; max-width: 26em; color: #D9CFC5">Korstnapühkija ja pottsepp-selli kutsetunnistused. Iga tehtud töö jõuab ametlikku Küttesüsteemide portaali.</p>
 </div>
-<dl style="flex: 1 1 480px; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border: 3px double #FEF0E3; font-size: 16px">
-<div style="padding: 16px 18px; border-right: 1px solid #6B5F55; border-bottom: 1px solid #6B5F55"><dt style="color: #D9CFC5">Korstnapühkija, tase 3</dt><dd style="margin: 4px 0 0; font-family: 'Young Serif', Georgia, serif; font-size: 26px">nr <span data-cms="kutse_korstnapuhkija">231956</span></dd></div>
-<div style="padding: 16px 18px; border-bottom: 1px solid #6B5F55"><dt style="color: #D9CFC5">Pottsepp-sell, tase 3</dt><dd style="margin: 4px 0 0; font-family: 'Young Serif', Georgia, serif; font-size: 26px">nr <span data-cms="kutse_pottsepp">230140</span></dd></div>
+<dl class="kl-tunnistused" style="flex: 1 1 480px; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border: 3px double #FEF0E3; font-size: 16px">
+<div style="padding: 16px 18px; border-right: 1px solid #6B5F55; border-bottom: 1px solid #6B5F55"><dt style="color: #D9CFC5">Korstnapühkija, tase&nbsp;3</dt><dd style="margin: 4px 0 0; font-family: 'Young Serif', Georgia, serif; font-size: 26px">nr&nbsp;<span data-cms="kutse_korstnapuhkija">231956</span></dd></div>
+<div style="padding: 16px 18px; border-bottom: 1px solid #6B5F55"><dt style="color: #D9CFC5">Pottsepp-sell, tase&nbsp;3</dt><dd style="margin: 4px 0 0; font-family: 'Young Serif', Georgia, serif; font-size: 26px">nr&nbsp;<span data-cms="kutse_pottsepp">230140</span></dd></div>
 <div style="padding: 16px 18px; border-right: 1px solid #6B5F55"><dt style="color: #D9CFC5">Koldesell OÜ registrikood</dt><dd style="margin: 4px 0 0; font-family: 'Young Serif', Georgia, serif; font-size: 26px"><span data-cms="registrikood">17556546</span></dd></div>
 <div style="padding: 16px 18px"><dt style="color: #D9CFC5">Teeninduspiirkond</dt><dd style="margin: 4px 0 0; font-size: 18px; font-weight: 700"><span data-cms="piirkond">Võrumaa, Tartumaa ja Lõuna-Eesti</span></dd></div>
 </dl>
