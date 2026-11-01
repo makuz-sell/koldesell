@@ -98,7 +98,7 @@ function jsonLdPlokk() {
           itemOffered: {
             '@type': 'Service',
             name: 'Korstnapühkimine',
-            description: 'Korstnate, ahjude, pliitide ja kaminate puhastamine koos ametliku aktiga Päästeametile ja Küttesüsteemide portaali.',
+            description: 'Korstnate, ahjude, pliitide ja kaminate puhastamine koos ametliku aktiga Küttesüsteemide portaali.',
             serviceType: 'Korstnapühkimine',
             areaServed: piirkond,
           },

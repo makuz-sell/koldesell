@@ -7,21 +7,36 @@
   "veebileht": "https://koldesell.ee",
   "linn": "Võru",
   "maakond": "Võru maakond",
-  "piirkond": "Võrumaa, Tartumaa ja Lõuna-Eesti",
+  "piirkond": "Võrumaa ja Lõuna-Eesti",
   "piirkond_lyhike": "Lõuna-Eesti",
-  "kirjeldus": "Korstnapühkija Võrus: korstnapühkimine Lõuna-Eestis, väiksemad ahju remonditööd ja küttesüsteemide kontroll Võrumaal ja Tartumaal. Ametlik akt Päästeametile.",
+  "kirjeldus": "Korstnapühkija Võrus: korstnapühkimine Lõuna-Eestis, väiksemad ahju remonditööd ja küttesüsteemide kontroll Võrumaal. Ametlik akt Küttesüsteemide portaali.",
   "baashind": "70",
   "kutse_korstnapuhkija": "231956",
   "kutse_pottsepp": "230140",
   "teeninduspiirkonnad": [
-    { "nimi": "Võrumaa", "tyyp": "AdministrativeArea" },
-    { "nimi": "Tartumaa", "tyyp": "AdministrativeArea" },
-    { "nimi": "Lõuna-Eesti", "tyyp": "Place" },
-    { "nimi": "Võru", "tyyp": "City" },
-    { "nimi": "Tartu", "tyyp": "City" },
-    { "nimi": "Põlva", "tyyp": "City" },
-    { "nimi": "Valga", "tyyp": "City" },
-    { "nimi": "Elva", "tyyp": "City" },
-    { "nimi": "Otepää", "tyyp": "City" }
+    {
+      "nimi": "Võrumaa",
+      "tyyp": "AdministrativeArea"
+    },
+    {
+      "nimi": "Lõuna-Eesti",
+      "tyyp": "Place"
+    },
+    {
+      "nimi": "Võru",
+      "tyyp": "City"
+    },
+    {
+      "nimi": "Põlva",
+      "tyyp": "City"
+    },
+    {
+      "nimi": "Valga",
+      "tyyp": "City"
+    },
+    {
+      "nimi": "Otepää",
+      "tyyp": "City"
+    }
   ]
 }
