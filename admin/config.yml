@@ -49,7 +49,7 @@ collections:
           - {label: "Veebileht", name: "veebileht", widget: "string", hint: "Täielik aadress, nt https://koldesell.ee"}
           - {label: "Linn (asukoht)", name: "linn", widget: "string"}
           - {label: "Maakond", name: "maakond", widget: "string"}
-          - {label: "Teeninduspiirkond (pikk)", name: "piirkond", widget: "string", hint: "Avalehe ülemisel ribal arvutis, nt 'Võrumaa, Tartumaa ja Lõuna-Eesti'"}
+          - {label: "Teeninduspiirkond (pikk)", name: "piirkond", widget: "string", hint: "Avalehe ülemisel ribal arvutis, nt 'Võrumaa ja Lõuna-Eesti'"}
           - {label: "Teeninduspiirkond (lühike)", name: "piirkond_lyhike", widget: "string", hint: "Ülemisel ribal telefonis. Hoia lühike, nt 'Lõuna-Eesti'"}
           - {label: "Ettevõtte kirjeldus (Google'i struktureeritud andmed)", name: "kirjeldus", widget: "text"}
           - {label: "Korstnapühkimise baashind (€)", name: "baashind", widget: "string", hint: "Ainult number, nt 70. Kuvatakse avalehel ja hinnakirjas.", pattern: ['^\d+([.,]\d+)?$', 'Ainult number']}
